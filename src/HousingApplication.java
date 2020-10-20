@@ -4,12 +4,12 @@ public class HousingApplication extends Document {
 	private String email;
 	
 	public HousingApplication(String firstName, String lastName, String currentAddress,
-			                  String phone, String socialSecurityNum, double monthlyIncome, String email) {
+			                  String phone, String socialSecurityNumber, double monthlyIncome, String email) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.currentAddress = currentAddress;
 		this.phone = phone;
-		this.socialSecurityNum = socialSecurityNum;
+		this.socialSecurityNumber = socialSecurityNumber;
 		this.monthlyIncome = monthlyIncome;
 		this.email = email;
 	}

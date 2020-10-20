@@ -5,12 +5,12 @@ public class HousingListings {
 	private ArrayList<HousingListing> housingListingList;
 	
 	public HousingListings() {
-		housingListingList = DataLoader.getHousingListings();
+		housingListingList = DataLoader.loadListings();
 	}
 	
 	public static HousingListings getInstance() {
 		if(housingListings == null) {
-			housingListings = new HousingsListings();
+			housingListings = new HousingListings();
 		}
 		
 		return housingListings;

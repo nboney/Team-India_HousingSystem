@@ -12,13 +12,13 @@ public class HousingListing {
 	private ArrayList<Review> reviews;
 	private HousingType housingType;
 	private ArrayList<Amenities> amenities;
-	private LeasingUser manager;
+	//private LeasingUser manager;
 	
-	public HousingListing(String listingTitle, String address, String description, 
+	/*public HousingListing(String listingTitle, String address, String description, 
 			double distance, double price, HousingType housingType, 
 			ArrayList<Amenities> amenities, LeasingUser manager) {
 		
-	}
+	}*/
 	
 	public void receiveApplication(HousingApplication application, StudentUser applier) {
 		
@@ -73,7 +73,7 @@ public class HousingListing {
 	}
 	
 	public ArrayList<Review> getReviews() {
-		
+		return null;
 	}
 	
 	public void addReview(StudentUser user, int rating, String comment) {
@@ -81,16 +81,17 @@ public class HousingListing {
 	}
 	
 	public ArrayList<Amenities> getAmenities() {
-		
+		return null;
 	}
 	
 	public void setAmenities(ArrayList<Amenities> amenities) {
 	
 	}
 	
+	/*
 	public LeasingUser getManager() {
 		
 	}
-	
+	*/
 	
 }

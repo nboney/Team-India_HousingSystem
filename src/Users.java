@@ -4,8 +4,8 @@ public class Users {
 	private Users users;
 	private ArrayList<RegisteredUser> userList;
 	
-	private private UserList() {
-		userList = DataLoader.getUsers();
+	private Users() {
+		userList = DataLoader.loadUsers();
 	}
 	
 	public Users getInstance() {

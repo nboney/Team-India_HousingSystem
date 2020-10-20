@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class StudentUser {
     private String studentID;
     private String currentAddress;
@@ -17,8 +19,9 @@ public class StudentUser {
         return null;    
     }
     
+    /*
     public void leaveUserRating(LeasingUser user, int rating) {
-    }
+    }*/
     
     public void leaveHousingReview (HousingListing listing, int rating, String comment) {
     }

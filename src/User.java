@@ -1,13 +1,15 @@
+import java.util.ArrayList;
+
 public class User {
     
     public User () {
     }
     
-    public ArrayList<Housing> search() {
+    public ArrayList<HousingListing> search() {
         return null;
     }   
         
-    public ArrayList<Housing> search(String tag) {
+    public ArrayList<HousingListing> search(String tag) {
         return null;    
     }    
 }
