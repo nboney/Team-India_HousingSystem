@@ -1,21 +1,22 @@
 {"users":[
   {
-    "id":S98878,
+    "accountId": 002120,
+    "Studentid": "S98878",
     "firstName":"Kristen",
     "lastName":"Wright",
     "status" : "registered user",
     "address": "23 Ginger Drive",
     "email":"wrightk@email.sc.edu",
     "phone":"803-333-7787",
-    "accountId":002120,
+    
   },{
-    "id":S34942,
+    "accountId":001920,
+    "Studentid": "S34942",
     "firstName":"Lilly",
     "lastName":"Pedals",
     "status" : "unregistered user".
     "address": "144 Orange Road",
     "email":"pedalsl@email.sc.edu",
     "phone":"803-770-2230",
-    "accountId":001920,
   }
 ]}
