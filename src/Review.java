@@ -4,18 +4,21 @@ public class Review {
     private String comment;
     
     public Review(StudentUser writer, double rating, String comment) {
+        this.writer = writer;
+        this.rating = rating;
+        this.comment = comment;
     }
     
-    public RegisteredUser getWriter() {
-        return null;
+    public StudentUser getWriter() {
+        return this.writer;
     }
     
     public int getRating() {
-        return 0;
+        return (int) rating;
     }
     
     public String getComment() {
-        return "";
+        return comment;
     }
     
     @Override
