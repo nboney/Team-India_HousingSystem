@@ -2,21 +2,21 @@
   {
     "accountId": 002120,
     "Studentid": "S98878",
-    "firstName":"Kristen",
-    "lastName":"Wright",
+    "firstName": "Kristen",
+    "lastName": "Wright",
     "status" : "registered user",
     "address": "23 Ginger Drive",
-    "email":"wrightk@email.sc.edu",
-    "phone":"803-333-7787",
+    "email": "wrightk@email.sc.edu",
+    "phone": "803-333-7787",
     
   },{
-    "accountId":001920,
+    "accountId": 001920,
     "Studentid": "S34942",
-    "firstName":"Lilly",
-    "lastName":"Pedals",
-    "status" : "unregistered user".
+    "firstName": "Lilly",
+    "lastName": "Pedals",
+    "status": "unregistered user",
     "address": "144 Orange Road",
-    "email":"pedalsl@email.sc.edu",
-    "phone":"803-770-2230",
+    "email": "pedalsl@email.sc.edu",
+    "phone": "803-770-2230",
   }
 ]}
