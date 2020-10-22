@@ -1,5 +1,7 @@
 public class Review {
     private StudentUser writer;
+    private String listingTitle;
+    private String author;
     private double rating;
     private String comment;
     
@@ -11,6 +13,14 @@ public class Review {
     
     public StudentUser getWriter() {
         return this.writer;
+    }
+    
+    public String getListingTitle() {
+    	return this.listingTitle;
+    }
+    
+    public String getAuthor() {
+    	return this.author;
     }
     
     public int getRating() {

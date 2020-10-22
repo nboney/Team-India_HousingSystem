@@ -73,5 +73,9 @@ public class DataLoader extends DataConstants {
 		*/
 		return listings;
 	}
+	
+	public static ArrayList<Review> loadReviews() {
+		return new ArrayList<Review>();
+	}
 }
 
