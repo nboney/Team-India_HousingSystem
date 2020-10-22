@@ -9,7 +9,7 @@ public class DataLoader extends DataConstants {
 	public static ArrayList<RegisteredUser> loadUsers() {
 		ArrayList<RegisteredUser> users = new ArrayList<RegisteredUser>();
 		
-		/*
+		
 		try {
 			FileReader reader = new FileReader(USERS_FILE_NAME);
 			JSONParser parser = new JSONParser();
@@ -37,8 +37,8 @@ public class DataLoader extends DataConstants {
 		}
 		
 		return null;
-		*/
-		return users;
+		
+		//return users;
 	}
 	
 	public static ArrayList<HousingListing> loadListings() {

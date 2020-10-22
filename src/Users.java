@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 
 public class Users {
-	private Users users;
+	private static Users users;
 	private ArrayList<RegisteredUser> userList;
 	
 	private Users() {
 		userList = DataLoader.loadUsers();
 	}
 	
-	public Users getInstance() {
+	public static Users getInstance() {
 		if(users == null) {
 			users = new Users();
 		}
