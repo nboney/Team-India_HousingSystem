@@ -19,4 +19,10 @@ public abstract class DataConstants {
 	protected static final String LISTINGS_RATING_COUNT = "ratingCount";
 	protected static final String LISTINGS_PRICE = "price";
 	protected static final String LISTINGS_DISTANCE = "distance";
+	
+	protected static final String REVIEWS_FILE_NAME = "src/reviews.json";
+	protected static final String REVIEWS_TITLE = "listingTitle";
+	protected static final String REVIEWS_AUTHOR = "author";
+	protected static final String REVIEWS_RATING = "rating";
+	protected static final String REVIEWS_COMMENT = "comment";
 }
