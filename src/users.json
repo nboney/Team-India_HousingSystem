@@ -1,22 +1,22 @@
 {"users":[
   {
-    "accountId": 002120,
-    "Studentid": "S98878",
     "firstName": "Kristen",
     "lastName": "Wright",
-    "status" : "registered user",
-    "address": "23 Ginger Drive",
-    "email": "wrightk@email.sc.edu",
+    "username":"wrightk",
+    "password":"abcDEF"
     "phone": "803-333-7787",
+    "email": "wrightk@email.sc.edu",
+    "rating":4.5,
+    "ratingCount":3
     
   },{
-    "accountId": 001920,
-    "Studentid": "S34942",
     "firstName": "Lilly",
     "lastName": "Pedals",
-    "status": "unregistered user",
-    "address": "144 Orange Road",
+    "username": "pedalz98",
+    "password": "1z2y3x4",
+    "phone":"803-770-2230"
     "email": "pedalsl@email.sc.edu",
-    "phone": "803-770-2230",
+    "rating": 3.9,
+    "ratingCount": 7
   }
 ]}
