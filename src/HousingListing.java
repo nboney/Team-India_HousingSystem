@@ -2,96 +2,108 @@ import java.util.ArrayList;
 
 public class HousingListing {
 	
-	private String listingTitle;
-	private String address;
-	private String description;
-	private int rating;
-	private int ratingCount;
-	private double distance;
-	private double price;
-	private ArrayList<Review> reviews;
-	private HousingType housingType;
-	private ArrayList<Amenities> amenities;
-	//private LeasingUser manager;
-	
-	/*public HousingListing(String listingTitle, String address, String description, 
+    private String listingTitle;
+    private String address;
+    private String description;
+    private int rating;
+    private int ratingCount;
+    private double distance;
+    private double price;
+    private ArrayList<Review> reviews;
+    private HousingType housingType;
+    private ArrayList<Amenities> amenities;
+    private LeasingUser manager;
+    private HousingApplication application;
+    private StudentUser applier;
+    
+    public HousingListing(String listingTitle, String address, String description, 
 			double distance, double price, HousingType housingType, 
 			ArrayList<Amenities> amenities, LeasingUser manager) {
+            
+        this.listingTitle = listingTitle;
+        this.address = address;
+        this.description = description;
+        this.distance = distance;
+        this.price = price;
+        this.housingType = housingType;
+        this.amenities = amenities;
+        this.manager = manager;
+	}
+	
+    public void receiveApplication(HousingApplication application, StudentUser applier) {
+        this.application = application;
+        this.applier = applier;         
+	}
+	
+    public String getListingTitle() {
+        return "";
+    }
+	
+    public void setListingTitle(String title) {
 		
-	}*/
+    }
 	
-	public void receiveApplication(HousingApplication application, StudentUser applier) {
-		
-	}
+    public String getAddress() {
+        return this.address;
+    }
+    
+    public void setAddress(String address) {
+	this.address = address;
+  
+    }
 	
-	public String getListingTitle() {
-		return "";
-	}
+    public String getDescription() {
+        return this.description;
+    }
 	
-	public void setListingTitle(String title) {
-		
-	}
+    public void setDescription(String description) {
+	this.description = description;	
+    }
 	
-	public String getAddress() {
-		return "";
-	}
+    public int getRating() {
+        return (int) rating;
+    }
 	
-	public void setAddress(String address) {
-		
-	}
+    public void setRating(int rating) {
+	this.rating = rating;	
+    }
 	
-	public String getDescription() {
-		return "";
-	}
+    public int getRatingCount() {
+        return (int) ratingCount;
+    }
 	
-	public void setDescription(String description) {
-		
-	}
+    public double getDistance() {
+        return this.distance;
+    }
 	
-	public int getRating() {
-		return 0;
-	}
+    public double getPrice() {
+        return price;
+    }
 	
-	public void setRating(int rating) {
-		
-	}
+    public void setPrice(double price) {
+	this.price = price;	
+    }
 	
-	public int getRatingCount() {
-		return 0;
-	}
+    public ArrayList<Review> getReviews() {
+        ArrayList<Review> reviews = new ArrayList<Review>();
+        return reviews;
+    }
 	
-	public double getDistance() {
-		return 0.0;
-	}
+    public void addReview(StudentUser user, int rating, String comment) {
+  
+    }
 	
-	public double getPrice() {
-		return 0.0;
-	}
-	
-	public void setPrice(double price) {
-		
-	}
-	
-	public ArrayList<Review> getReviews() {
-		return null;
-	}
-	
-	public void addReview(StudentUser user, int rating, String comment) {
-		
-	}
-	
-	public ArrayList<Amenities> getAmenities() {
-		return null;
-	}
-	
-	public void setAmenities(ArrayList<Amenities> amenities) {
-	
-	}
-	
+    public ArrayList<Amenities> getAmenities() {
+        ArrayList<Amenities> amenities = new ArrayList<Amenities>();
+        return amenities;
+    }
+    
+    public void setAmenities(ArrayList<Amenities> amenities) {
+	this.amenities = amenities;
+    }
 	/*
 	public LeasingUser getManager() {
 		
 	}
 	*/
-	
 }
