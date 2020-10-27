@@ -36,7 +36,7 @@ public class HousingListing {
 	}
 	
     public String getListingTitle() {
-        return "";
+        return this.listingTitle;
     }
 	
     public void setListingTitle(String title) {
