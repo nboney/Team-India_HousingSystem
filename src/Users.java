@@ -2,10 +2,12 @@ import java.util.ArrayList;
 
 public class Users {
 	private static Users users;
-	private ArrayList<RegisteredUser> userList;
+	private ArrayList<StudentUser> studentList;
+	private ArrayList<LeasingUser> leaserList;
 	
 	private Users() {
-		userList = DataLoader.loadUsers();
+		studentList = DataLoader.loadStudents();
+		leaserList = DataLoader.loadLeasers();
 	}
 	
 	public static Users getInstance() {
@@ -16,27 +18,65 @@ public class Users {
 		return users;
 	}
 	
-	public boolean haveUser(String username, int index) {
-		/*for(int i = 0; i < userList.size(); ++i) {
-			RegisteredUser currUser = userList.get(i);
-			if(currUser.getUsername().contentEquals(username)) {
-				return true;
-			}
-		}*/
-		if(userList.get(index).getUsername().contentEquals(username)) {
+	public boolean haveStudent(String username, int index) {
+		if(studentList.get(index).getUsername().contentEquals(username)) {
 			return true;
 		}
 		
 		return false;
 	}
 	
-	public User getUser(String username) {
-		for(int i = 0; i < userList.size(); ++i) {
-			if(users.haveUser(username, i)) {
-				return userList.get(i);
+	public StudentUser getStudent(String username) {
+		for(int i = 0; i < studentList.size(); ++i) {
+			if(users.haveStudent(username, i)) {
+				return studentList.get(i);
 			}
 		}
 		
 		return null;
+	}
+	
+	public ArrayList<StudentUser> getStudentList() {
+		return this.studentList;
+	}
+	
+	public boolean studentLogin(String username, String password) {
+		for(int i = 0; i < studentList.size(); ++i) {
+			if(studentList.get(i).getUsername().contentEquals(username) &&
+				studentList.get(i).getPassword().contentEquals(password)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	public boolean haveLeaser(String username, int index) {
+		if(leaserList.get(index).getUsername().contentEquals(username)) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	public LeasingUser getLeaser(String username) {
+		for(int i = 0; i < leaserList.size(); ++i) {
+			if(users.haveLeaser(username, i)) {
+				return leaserList.get(i);
+			}
+		}
+		
+		return null;
+	}
+	
+	public boolean leaserLogin(String username, String password) {
+		for(int i = 0; i < leaserList.size(); ++i) {
+			if(leaserList.get(i).getUsername().contentEquals(username) &&
+				leaserList.get(i).getPassword().contentEquals(password)) {
+				return true;
+			}
+		}
+		
+		return false;
 	}
 }

@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class HousingListing {
 	
+	private String listingID;
     private String listingTitle;
     private String address;
     private String description;
@@ -13,12 +14,11 @@ public class HousingListing {
     private HousingType housingType;
     private ArrayList<Amenities> amenities;
     private LeasingUser manager;
-    private HousingApplication application;
-    private StudentUser applier;
+    private String managerUsername;
     
     public HousingListing(String listingTitle, String address, String description, 
 			double distance, double price, HousingType housingType, 
-			ArrayList<Amenities> amenities, LeasingUser manager) {
+			ArrayList<Amenities> amenities) {
             
         this.listingTitle = listingTitle;
         this.address = address;
@@ -30,17 +30,19 @@ public class HousingListing {
         this.manager = manager;
 	}
 	
-    public void receiveApplication(HousingApplication application, StudentUser applier) {
-        this.application = application;
-        this.applier = applier;         
+	public String getListingID() {
+		return this.listingID;
 	}
 	
+	public void setListingID(String id) {
+		this.listingID = id;
+	}
     public String getListingTitle() {
         return this.listingTitle;
     }
 	
     public void setListingTitle(String title) {
-		
+		this.listingTitle = title;
     }
 	
     public String getAddress() {
@@ -48,7 +50,7 @@ public class HousingListing {
     }
     
     public void setAddress(String address) {
-	this.address = address;
+    	this.address = address;
   
     }
 	
@@ -57,7 +59,7 @@ public class HousingListing {
     }
 	
     public void setDescription(String description) {
-	this.description = description;	
+    	this.description = description;	
     }
 	
     public int getRating() {
@@ -65,7 +67,7 @@ public class HousingListing {
     }
 	
     public void setRating(int rating) {
-	this.rating = rating;	
+    	this.rating = rating;	
     }
 	
     public int getRatingCount() {
@@ -81,7 +83,11 @@ public class HousingListing {
     }
 	
     public void setPrice(double price) {
-	this.price = price;	
+    	this.price = price;	
+    }
+    
+    public HousingType getHousingType() {
+    	return this.housingType;
     }
 	
     public ArrayList<Review> getReviews() {
@@ -94,16 +100,24 @@ public class HousingListing {
     }
 	
     public ArrayList<Amenities> getAmenities() {
-        ArrayList<Amenities> amenities = new ArrayList<Amenities>();
-        return amenities;
+        return this.amenities;
     }
     
     public void setAmenities(ArrayList<Amenities> amenities) {
-	this.amenities = amenities;
+    	this.amenities = amenities;
     }
-	/*
+    
+    public void addAmenity(Amenities amenity) {
+    	this.amenities.add(amenity);
+    }
+	
 	public LeasingUser getManager() {
-		
+		return this.manager;
 	}
-	*/
+	
+	public void setManager(LeasingUser leaser) {
+		this.manager = leaser;
+		this.managerUsername = leaser.getUsername();
+	}
+	
 }

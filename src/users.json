@@ -6,8 +6,9 @@
     "password":"abcDEF"
     "phone": "803-333-7787",
     "email": "wrightk@email.sc.edu",
-    "rating":4.5,
-    "ratingCount":3
+    "favorites": {012, 142, 321},
+    "rating": 4.5,
+    "ratingCount": 3
     
   },{
     "firstName": "Lilly",
@@ -16,6 +17,7 @@
     "password": "1z2y3x4",
     "phone":"803-770-2230"
     "email": "pedalsl@email.sc.edu",
+    "favorites": {321, 003, 772, 082},
     "rating": 3.9,
     "ratingCount": 7
   }

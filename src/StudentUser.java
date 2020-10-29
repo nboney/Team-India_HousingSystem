@@ -1,21 +1,9 @@
 import java.util.ArrayList;
 
-public class StudentUser {
+public class StudentUser extends RegisteredUser {
     private String studentID;
     private String currentAddress;
     private ArrayList<HousingListing> favorites;
-    private HousingApplication application;
-    private String firstName;
-    private String lastName;
-    private String username;
-    private String password;
-    private String phone;
-    private String email;
-    private HousingListing listing;
-    private int rating;
-    private String comment;
-    private String socialSecurityNum;
-    private double monthlyIncome;
     
     
     public StudentUser(String firstName, String lastName, 
@@ -44,19 +32,12 @@ public class StudentUser {
     }*/
     
     public void leaveHousingReview (HousingListing listing, int rating, String comment) {
-        this.listing = listing;
-        this.rating = rating;
-        this.comment = comment;    
+          
     }
     
-    public void createApplication(String socialSecurityNum, double monthlyIncome) {     
-        this.socialSecurityNum = socialSecurityNum;
-        this.monthlyIncome = monthlyIncome;
-    }
-    
-    public void sendApplication(HousingApplication application, HousingListing listing) {
-        this.application = application;
-        this.listing = listing;      
+    //Incomplete method - going to revisit later
+    public void updateRating(int rating) {
+    	this.ratingCount = this.ratingCount++;
     }
     
     @Override
