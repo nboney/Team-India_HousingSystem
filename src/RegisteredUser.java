@@ -1,5 +1,6 @@
 public class RegisteredUser extends User {
-    protected String firstName;
+    protected String userID;
+	protected String firstName;
     protected String lastName;
     protected String username;
     protected String password;
@@ -7,9 +8,8 @@ public class RegisteredUser extends User {
     protected String email;
     protected int rating;
     protected int ratingCount;
-    protected RegisteredUser user;
     
-    
+    /*
     public RegisteredUser(String firstName,String lastName,
                           String username, String password,
                           String phone,String email, int rating,
@@ -23,11 +23,11 @@ public class RegisteredUser extends User {
         this.email = email;
         this.rating = rating;
         this.ratingCount = ratingCount;
-    }
+    }*/
     
     /*
      * Constructor for TESTING purposes ONLY. Needed for first pass at DataLoader
-     */
+     
     public RegisteredUser(String firstName2, String lastName2, String username2, String password2, String email2,
                           int parseInt, int parseInt2) {
     // TODO Auto-generated constructor stub
@@ -38,14 +38,17 @@ public class RegisteredUser extends User {
         this.email = email2;
         this.rating = parseInt;
         this.ratingCount = parseInt2;     
-  }
-
-  public void leaveUserRating(RegisteredUser user, int rating) {
-      this.user = user;
-      this.rating = rating;
-    }
+  }*/
   
   public String getUsername() {
 	  return this.username;
+  }
+  
+  public String getPassword() {
+	  return this.password;
+  }
+  
+  public void setID(String id) {
+	  this.userID = id;
   }
 }

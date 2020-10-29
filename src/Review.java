@@ -1,18 +1,15 @@
 public class Review {
-    private StudentUser writer;
     private String listingTitle;
     private String author;
     private double rating;
     private String comment;
+    private String listingID;
     
-    public Review(StudentUser writer, double rating, String comment) {
-        this.writer = writer;
+    public Review(String author, double rating, String comment, String listingID) {
+        this.author = author;
         this.rating = rating;
         this.comment = comment;
-    }
-    
-    public StudentUser getWriter() {
-        return this.writer;
+        this.listingID = listingID;
     }
     
     public String getListingTitle() {
@@ -33,6 +30,6 @@ public class Review {
     
     @Override
     public String toString() {
-        return "";
+        return "Review by: " + this.author + "\nRating: " + this.rating + "\n" + this.comment;
     }
 }
