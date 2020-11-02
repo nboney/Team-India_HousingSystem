@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class HousingUI {
     private static final String  WELCOME_MESSAGE = "Welcome to Team India Housing system";
-    private String[] mainMenuOptions = {"Find Porty Name","Exit"};
+    private String[] mainMenuOptions = {"Register account","Log in","Exit"};
     private Scanner sc;
     private HousingListings housingListing;
 
@@ -27,13 +27,14 @@ public class HousingUI {
             if(command == mainMenuOptions.length -1)
                 break;
             switch (command){
-                case (0):
-                    searchByName();
+                case (1):
+
                     break;
             }
         }
         System.out.println("Good bye");
     }
+
 
     public void displayMainMenu(){
         System.out.println("---------*Main Menu*---------");
@@ -45,7 +46,7 @@ public class HousingUI {
     }
 
     public int getCommand(int numCommand){
-        System.out.println("What you want search for today?");
+        System.out.println("Please Select Your Account Type");
         String input = sc.nextLine();
         int command =  Integer.parseInt(input) -1;
         if (command >= 0 && command <= numCommand){
@@ -56,8 +57,20 @@ public class HousingUI {
 
     }
 
+
+    public void userLogin(){
+        System.out.println("Please enter your Account number and Password");
+        String userName = sc.nextLine();
+        String passWord  = sc.nextLine();
+
+    }
+
+
+
+
+
     private String getHousingList(){
-        System.out.println("Enter Porty Name : ");
+        System.out.println("Enter property Name : ");
         while (true){
             String portyName = sc.nextLine().trim().toLowerCase();
 
@@ -65,7 +78,7 @@ public class HousingUI {
                 return portyName;
             }
 
-            System.out.println("There are no such porty inout database");
+            System.out.println("There are no such property inout database");
             System.out.println("Would you like to search another porty");
             System.out.println("Please enter (Y) to search another porty or (n) to return to the main menu" );
             String command = sc.nextLine().trim().toLowerCase();
