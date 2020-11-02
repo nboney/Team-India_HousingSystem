@@ -59,9 +59,12 @@ public class HousingUI {
 
 
     public void userLogin(){
-        System.out.println("Please enter your Account number and Password");
-        String userName = sc.nextLine();
-        String passWord  = sc.nextLine();
+        System.out.println("Please enter your Account");
+        String inputUserName = sc.nextLine();
+        System.out.println("Please enter your password");
+        String inputPassWord  = sc.nextLine();
+
+
 
     }
 
