@@ -2,105 +2,93 @@ import java.util.Scanner;
 
 public class HousingUI {
     private static final String  WELCOME_MESSAGE = "Welcome to Team India Housing system";
-    private String[] mainMenuOptions = {"Register account","Log in","Exit"};
+    private static final String ChoiceByNumber = "Please choose by command number " ;
     private Scanner sc;
-    private HousingListings housingListing;
+    private String[] mainMenuOptions = {"Students", "None Student" ,"Quit"};
+    private String[] StudentLoginMenu = {"Sign in" ,"Sign up", "Back"};
+    private String[] NoneStudentLoginMenu = {"Sign in" ,"Sign up", "Back"};
+    private String[] StudentMainMenu = {"Find a House", "Sign a Lease" ," Leave a Review", "Back to login"};
+    private String[] NoneStudentMainMenu = {"Upload a House" , "Sign a Lease"};
+    private String [] HouseAmenities = {"Numbers of Bedrooms" , "Numbers of Bathrooms",
+            "Allow pets", "Having a pool", "Included Washer and Dyer"};
+    private User user;
+
 
     HousingUI(){
         sc = new Scanner(System.in);
-        housingListing = new HousingListings();
+        User user = new User();
+        StudentUser studentUser = new StudentUser();
+        HousingListings housingListings = HousingListings.getInstance();
+        Reviews reviews = Reviews.getInstance();
+
     }
+
+
 
     public void run(){
         System.out.println(WELCOME_MESSAGE);
-
-        while (true){
-            displayMainMenu();
-
+            displayMenu(mainMenuOptions);
             int command = getCommand(mainMenuOptions.length);
 
-            if (command == -1){
-                System.out.println("Not valid command");
-                continue;
-            }
-
-            if(command == mainMenuOptions.length -1)
-                break;
             switch (command){
                 case (1):
-
+                    StudentUserLogin();
+                    break;
+                case (2):
+                    NoneStudentLogin();
+                    break;
+                case (3):
+                    System.out.println("Bye!");
+                default:
+                    System.out.println("Wrong choice!");
                     break;
             }
-        }
-        System.out.println("Good bye");
+
     }
 
 
-    public void displayMainMenu(){
-        System.out.println("---------*Main Menu*---------");
-        for (int i = 0; i < mainMenuOptions.length; i++){
-            System.out.println((i+1) + "" + mainMenuOptions[i]);
+    public void displayMenu(String[] menu){
+        for (int i = 0; i < menu.length; i++){
+            System.out.println((i+1) + "" + menu[i]);
             System.out.println("");
         }
 
     }
 
-    public int getCommand(int numCommand){
-        System.out.println("Please Select Your Account Type");
+    private int getCommand(int numCommands) {
+        System.out.println("Please Enter the command number");
         String input = sc.nextLine();
-        int command =  Integer.parseInt(input) -1;
-        if (command >= 0 && command <= numCommand){
-            return command;
-        }else {
-            return -1;
+        int command = Integer.parseInt(input) - 1;
+        if(command >= 0 && command <= numCommands -1) return command;
+
+        return -1;
+    }
+
+
+
+
+    public void StudentUserLogin(){
+        int command;
+        displayMenu(StudentLoginMenu);
+        command = getCommand(StudentLoginMenu.length);
+
+        switch (command){
+
         }
 
-    }
 
-
-    public void userLogin(){
-        System.out.println("Please enter your Account");
-        String inputUserName = sc.nextLine();
-        System.out.println("Please enter your password");
-        String inputPassWord  = sc.nextLine();
-
-
-
-    }
-
-
-
-
-
-    private String getHousingList(){
-        System.out.println("Enter property Name : ");
-        while (true){
-            String portyName = sc.nextLine().trim().toLowerCase();
-
-            if (!portyName.contentEquals("")){
-                return portyName;
-            }
-
-            System.out.println("There are no such property inout database");
-            System.out.println("Would you like to search another porty");
-            System.out.println("Please enter (Y) to search another porty or (n) to return to the main menu" );
-            String command = sc.nextLine().trim().toLowerCase();
-            if (command == "n"){
-                return null;
-            }
         }
-    }
 
+    public void NoneStudentLogin(){
+        int command;
+        displayMenu(NoneStudentLoginMenu);
+        command = getCommand(NoneStudentLoginMenu.length);
 
-    public void searchByName(){
-        System.out.println("---------*Searching the House*---------");
-        String housingName = getHousingList();
-        if(housingName == null){
-            return;
         }
-        
 
-    }
+        public void
+
+
 
     public static void main(String[] args) {
         HousingUI housingInterface = new HousingUI();

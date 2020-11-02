@@ -11,7 +11,7 @@ public class HousingSystem {
         return users.haveStudent(username, index);
     }
     
-    public boolean getHosuingList() {
+    public boolean getHousingList() {
         return false;       
     }
     
