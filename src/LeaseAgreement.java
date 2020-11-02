@@ -16,12 +16,12 @@ public class LeaseAgreement { //extends Document {
 	private int num_bed;
 	private int num_bath;
 	private int sczip;
-    private int startdate;
-    private int enddate;
-    private int rent;
-    private String paymentAddress;
-    private int damages;
-    private String tenant1 = "";
+   	private int startdate;
+    	private int enddate;
+    	private int rent;
+    	private String paymentAddress;
+    	private int damages;
+    	private String tenant1 = "";
 
     public LeaseAgreement() {
     	
@@ -31,17 +31,17 @@ public class LeaseAgreement { //extends Document {
     	
     	//file should be local
     	File oglease = new File("/Users/sonaguzzarlamudi/Desktop/LeaseAgreement.txt");
-		Scanner scanner = new Scanner(oglease);
-		FileWriter writer = new FileWriter("/Users/sonaguzzarlamudi/Desktop/NewLeaseAgreement.txt");
-		String line;
-		while(scanner.hasNextLine()) {
-			line = scanner.nextLine();
-			line = line.replaceAll(target, replacement);
-			writer.write(line);
-			//writer.newLine();
-		}
-		scanner.close();
-		writer.close();
+	Scanner scanner = new Scanner(oglease);
+	FileWriter writer = new FileWriter("/Users/sonaguzzarlamudi/Desktop/NewLeaseAgreement.txt");
+	String line;
+	while(scanner.hasNextLine()) {
+		line = scanner.nextLine();
+		line = line.replaceAll(target, replacement);
+	  	 writer.write(line);
+		//writer.newLine();
+	}
+	scanner.close();
+	writer.close();
     }
 	
     public static void main(String[] args) throws IOException {
@@ -51,7 +51,7 @@ public class LeaseAgreement { //extends Document {
         String newLL = keyboard.nextLine();
     	modifytxt("c:/Users/sonaguzzarlamudi/Desktop/LeaseAgreement.txt", "LANDLOARD", ""+newLL+"",
     			"d:/Users/sonaguzzarlamudi/Desktop/NewLease.txt");
-    	//if you take out newLL and put in anything, it should export to desktop
+    		//if you take out newLL and put in anything, it should export to desktop
     }
 }
 
