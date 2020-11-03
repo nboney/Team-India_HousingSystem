@@ -7,8 +7,8 @@ public class HousingSystem {
         reviews = Reviews.getInstance();
     }
     
-    public boolean userLogin(String username, int index) {
-        return users.haveStudent(username, index);
+    public boolean userLogin(String username, String password) {
+        return users.studentLogin(username, password);
     }
     
     public boolean getHousingList() {
