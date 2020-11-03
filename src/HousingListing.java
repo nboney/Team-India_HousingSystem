@@ -96,7 +96,7 @@ public class HousingListing {
     }
 	
     public void addReview(StudentUser user, int rating, String comment) {
-  
+  	this.reviews.add(user, rating, comment);
     }
 	
     public ArrayList<Amenities> getAmenities() {
