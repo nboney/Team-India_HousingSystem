@@ -28,6 +28,12 @@ public class Review {
         return comment;
     }
     
+   /**
+    public void addReview(Review review, StudentUser user, int rating, String comment) {
+        reviews.add(review);
+    }
+    */
+    
     @Override
     public String toString() {
         return "Review by: " + this.author + "\nRating: " + this.rating + "\n" + this.comment;
