@@ -1,7 +1,7 @@
 public class Review {
     private String listingTitle;
     private String author;
-    private double rating;
+    private int rating;
     private String comment;
     private String listingID;
     
