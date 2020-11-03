@@ -5,7 +5,7 @@ public class Review {
     private String comment;
     private String listingID;
     
-    public Review(String author, double rating, String comment, String listingID) {
+    public Review(String author, int rating, String comment, String listingID) {
         this.author = author;
         this.rating = rating;
         this.comment = comment;
