@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class HousingListing {
 	
-	private String listingID;
+    private String listingID;
     private String listingTitle;
     private String address;
     private String description;
