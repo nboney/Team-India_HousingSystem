@@ -7,15 +7,11 @@ public class HousingSystem {
         reviews = Reviews.getInstance();
     }
     
-    public boolean userLogin(String username, String password) {
+    public boolean StudentUserLogin(String username, String password) {
         return users.studentLogin(username, password);
     }
     
-    public boolean getHousingList() {
-        return false;       
-    }
-    
-    public boolean searchByName() {
-        return false;       
+    public boolean NoneStudentLogin(String username, String password) {
+        return users.leaserLogin(username, password);
     }  
 }
