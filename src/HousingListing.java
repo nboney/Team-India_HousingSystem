@@ -95,9 +95,11 @@ public class HousingListing {
         return reviews;
     }
 	
-    public void addReview(StudentUser user, int rating, String comment) {
-  
+   /**
+    public void addReview(Review review, StudentUser user, int rating, String comment) {
+        review.addReview(review, user, rating, comment);
     }
+    */
 	
     public ArrayList<Amenities> getAmenities() {
         return this.amenities;
