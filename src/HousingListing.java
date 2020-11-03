@@ -28,15 +28,15 @@ public class HousingListing {
         this.housingType = housingType;
         this.amenities = amenities;
         this.manager = manager;
-	}
+    }
 	
-	public String getListingID() {
+    public String getListingID() {
 		return this.listingID;
-	}
+    }
 	
-	public void setListingID(String id) {
+    public void setListingID(String id) {
 		this.listingID = id;
-	}
+    }
     public String getListingTitle() {
         return this.listingTitle;
     }
@@ -111,13 +111,12 @@ public class HousingListing {
     	this.amenities.add(amenity);
     }
 	
-	public LeasingUser getManager() {
+    public LeasingUser getManager() {
 		return this.manager;
-	}
+    }
 	
-	public void setManager(LeasingUser leaser) {
+    public void setManager(LeasingUser leaser) {
 		this.manager = leaser;
 		this.managerUsername = leaser.getUsername();
-	}
-	
+    }	
 }
