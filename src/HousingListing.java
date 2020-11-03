@@ -31,18 +31,18 @@ public class HousingListing {
     }
 	
     public String getListingID() {
-		return this.listingID;
+	return this.listingID;
     }
 	
     public void setListingID(String id) {
-		this.listingID = id;
+	this.listingID = id;
     }
     public String getListingTitle() {
         return this.listingTitle;
     }
 	
     public void setListingTitle(String title) {
-		this.listingTitle = title;
+	this.listingTitle = title;
     }
 	
     public String getAddress() {
@@ -112,11 +112,11 @@ public class HousingListing {
     }
 	
     public LeasingUser getManager() {
-		return this.manager;
+	return this.manager;
     }
 	
     public void setManager(LeasingUser leaser) {
-		this.manager = leaser;
-		this.managerUsername = leaser.getUsername();
+	this.manager = leaser;
+	this.managerUsername = leaser.getUsername();
     }	
 }
