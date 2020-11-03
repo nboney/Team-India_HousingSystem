@@ -1,5 +1,8 @@
 public class HousingUILogin {
 
+        private String userName;
+        private String passWord;
+        
         public String getUserName() {
             return userName;
         }
