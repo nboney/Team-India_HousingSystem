@@ -79,14 +79,15 @@ public class HousingSystem {
     public ArrayList<HousingListing> FindHouse(String listingTitle, HousingType housingType,
                              ArrayList<Amenities> amenities) {
         ArrayList<HousingListing> results = null;
-        
         for(int i = 0; i < this.housingListingList.size(); ++i) {
-            
-            if(listingTitle != null && housingType != null 
-               && amenities != null) {
-                results.add(this.housingListingList.get(i));
+             
+            if(housingSearch.equals(listingTitle) && housingSearch.equals(housingType) &&
+            housingSearch.equals(amenities)) {
+          
+            results.add(this.housingListingList.get(i));
             } 
-        }    
+        }
+           
         return results;    
     }
     
@@ -94,7 +95,7 @@ public class HousingSystem {
         ArrayList<HousingListing> results = null;
         
         for(int i = 0; i < this.housingListingList.size(); ++i) {
-            if(listingTitle != null) {
+            if(housingSearch.equals(listingTitle)) {
                 results.add(this.housingListingList.get(i));
             }
         }
