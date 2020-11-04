@@ -47,13 +47,13 @@ public class HousingSystem {
         return true;
     }
     
-    public boolean FindHouse(String listingTitle) {
+    public boolean FindHouseName(String listingTitle) {
         if(housingListings.equals(listingTitle))return true;
         return false;
     }
     
     public boolean FindByName(String listingTitle) {
-        if(!FindHouse(listingTitle))return false;
+        if(!FindHouseName(listingTitle))return false;
         return true;
     }
 }
