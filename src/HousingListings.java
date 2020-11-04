@@ -16,6 +16,16 @@ public class HousingListings {
 		return housingListings;
 	}
 	
+	public HousingListing retreiveByID(String listingID) {
+		 for(int i = 0; i < housingListingList.size(); ++i) {
+			 if(housingListingList.get(i).getListingID().contains(listingID)) {
+				 //System.out.println("There's a match");
+				 return housingListingList.get(i);
+			 }
+		 }
+		 return null;
+	}
+	
 	public boolean haveListing(String listingTitle, int index) {
 		if(housingListingList.get(index).getListingTitle().contains(listingTitle)) {
 			return true;
@@ -51,11 +61,13 @@ public class HousingListings {
 		return null;
 	}
 	
-	public HousingListing addListing(HousingListing listing) {
-		listing.setListingID(Integer.toString(housingListingList.size()));
+	public String generateListingID() {
+		String newID = String.valueOf(housingListingList.size());
+		return newID;
+	}
+	
+	public void addListing(HousingListing listing) {
 		housingListingList.add(listing);
-		return listing;
-		
 	}
 	
 	public void removeListing(HousingListing listing) {

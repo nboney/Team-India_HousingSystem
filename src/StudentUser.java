@@ -2,14 +2,12 @@ import java.util.ArrayList;
 
 public class StudentUser extends RegisteredUser {
     private String studentID;
-    private String currentAddress;
     private ArrayList<HousingListing> favorites;
     
     
-    public StudentUser(String firstName, String lastName, 
+    public StudentUser(String studentID, String firstName, String lastName, 
                        String username, String password,
-                       String phone, String email,
-                       String studentID) {
+                       String phone, String email) {
         
         this.firstName = firstName;
         this.lastName = lastName;
@@ -17,11 +15,13 @@ public class StudentUser extends RegisteredUser {
         this.password = password;
         this.phone = phone;
         this.email = email;
-        this.studentID = studentID;
+        this.userID = studentID;
+        this.studentID = this.userID;
+        favorites = new ArrayList<HousingListing>();
     }
     
     public void addFavorites(HousingListing listing) {
-        favorites.add(listing);
+        this.favorites.add(listing);
     }
     
     public ArrayList<HousingListing> getFavorites() {
@@ -35,13 +35,19 @@ public class StudentUser extends RegisteredUser {
           
     }
     
+    public void setRatingInfo(int rating, int ratingCount) {
+    	this.rating = rating;
+    	this.ratingCount = ratingCount;
+    }
     //Incomplete method - going to revisit later
+    /*
     public void updateRating(int rating) {
     	this.ratingCount = this.ratingCount++;
-    }
+    }*/
     
     @Override
     public String toString() {
-        return "";
+        return this.firstName + " " + this.lastName + "\n" + this.username + this.studentID +
+        		"\n" + this.phone;
     }
 }

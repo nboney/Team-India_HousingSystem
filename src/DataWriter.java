@@ -7,7 +7,7 @@ import org.json.simple.JSONObject;
 
 public class DataWriter extends DataConstants {
 	
-	public static void saveUsers() {
+	/*public static void saveUsers() {
 		
 		Users user = Users.getInstance();
 		ArrayList<RegisteredUser> friends = user.getRegisteredUser();
@@ -66,5 +66,5 @@ public class DataWriter extends DataConstants {
 		reviewDetails.put(REVIEWS_COMMENT, review.getComment());
 		
 		return reviewDetails;
-	}
+	}*/
 }

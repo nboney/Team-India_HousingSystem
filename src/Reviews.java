@@ -18,8 +18,14 @@ public class Reviews {
 		
 	}
 	
-	public ArrayList<Review> getReviews(String listingTitle) {
+	public ArrayList<Review> getReviews(String listingID) {
 		ArrayList<Review> listingReviews = new ArrayList<Review>();
+		
+		for(int i = 0; i < reviewList.size(); ++i) {
+			if (reviewList.get(i).getReviewID().contentEquals(listingID)) {
+				listingReviews.add(reviewList.get(i));
+			}
+		}
 		return listingReviews;
 	}
 	

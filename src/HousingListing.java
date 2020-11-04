@@ -5,6 +5,7 @@ public class HousingListing {
 	private String listingID;
     private String listingTitle;
     private String address;
+    private String billingAddress;
     private String description;
     private int rating;
     private int ratingCount;
@@ -13,12 +14,16 @@ public class HousingListing {
     private ArrayList<Review> reviews;
     private HousingType housingType;
     private ArrayList<Amenities> amenities;
-    private LeasingUser manager;
     private String managerUsername;
+    private String managerName;
+    private int bedrooms;
+    private int bathrooms;
+    private int availableUnits;
     
     public HousingListing(String listingTitle, String address, String description, 
-			double distance, double price, HousingType housingType, 
-			ArrayList<Amenities> amenities) {
+			              double distance, double price, HousingType housingType, 
+			              ArrayList<Amenities> amenities, String managerUsername, int bedrooms, int bathrooms,
+			              int availableUnits) {
             
         this.listingTitle = listingTitle;
         this.address = address;
@@ -27,7 +32,6 @@ public class HousingListing {
         this.price = price;
         this.housingType = housingType;
         this.amenities = amenities;
-        this.manager = manager;
 	}
 	
 	public String getListingID() {
@@ -53,7 +57,23 @@ public class HousingListing {
     	this.address = address;
   
     }
+    
+    public String getPaymentAddress() {
+    	return this.billingAddress;
+    }
+    
+    public void setBillingAddress(String address) {
+    	
+    }
 	
+    public void setManagerName(String firstName, String lastName) {
+    	this.managerName = firstName + " " + lastName;
+    }
+    
+    public String getManagerName() {
+    	return this.managerName;
+    }
+    
     public String getDescription() {
         return this.description;
     }
@@ -74,6 +94,10 @@ public class HousingListing {
         return (int) ratingCount;
     }
 	
+    public void setRatingCount(int ratingCount) {
+    	this.ratingCount = ratingCount;
+    }
+    
     public double getDistance() {
         return this.distance;
     }
@@ -86,6 +110,22 @@ public class HousingListing {
     	this.price = price;	
     }
     
+    public void setBedrooms(int bedrooms) {
+    	this.bedrooms = bedrooms;
+    }
+    
+    public int getBedrooms() {
+    	return this.bedrooms;
+    }
+    
+    public void setBathrooms(int bathrooms) {
+    	this.bathrooms = bathrooms;
+    }
+    
+    public int getBathrooms() {
+    	return this.bathrooms;
+    }
+    
     public HousingType getHousingType() {
     	return this.housingType;
     }
@@ -95,10 +135,14 @@ public class HousingListing {
         return reviews;
     }
 	
-    public void addReview(StudentUser user, int rating, String comment) {
+    public void addNewReview(StudentUser user, int rating, String comment) {
   
     }
 	
+    public void addReview(Review review) {
+    	this.reviews.add(review);
+    }
+    
     public ArrayList<Amenities> getAmenities() {
         return this.amenities;
     }
@@ -111,13 +155,9 @@ public class HousingListing {
     	this.amenities.add(amenity);
     }
 	
-	public LeasingUser getManager() {
-		return this.manager;
-	}
-	
-	public void setManager(LeasingUser leaser) {
-		this.manager = leaser;
-		this.managerUsername = leaser.getUsername();
-	}
+    public String toString() {
+    	return this.listingTitle + "\n" + this.address + "\nProperty Manager: " + this.managerName +
+    			"\n$" + this.price + " per month\n" + this.distance + " miles from campus\n";
+    }
 	
 }

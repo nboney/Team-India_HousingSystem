@@ -1,11 +1,11 @@
 public class Review {
     private String listingTitle;
     private String author;
-    private double rating;
+    private int rating;
     private String comment;
     private String listingID;
     
-    public Review(String author, double rating, String comment, String listingID) {
+    public Review(String author, int rating, String comment, String listingID) {
         this.author = author;
         this.rating = rating;
         this.comment = comment;
@@ -16,6 +16,7 @@ public class Review {
     	return this.listingTitle;
     }
     
+   
     public String getAuthor() {
     	return this.author;
     }
@@ -26,6 +27,14 @@ public class Review {
     
     public String getComment() {
         return comment;
+    }
+    
+    public void setReviewID(String listingID) {
+    	this.listingID = listingID;
+    }
+    
+    public String getReviewID() {
+    	return this.listingID;
     }
     
     @Override
