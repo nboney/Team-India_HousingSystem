@@ -37,11 +37,23 @@ public class HousingSystem {
         return false;    
     }
     
-    public boolean FindHouse() {
-        return false;  
+    public boolean FindHouse(String listingTitle, HousingType housingType,
+                             ArrayList<Amenities> amenities) {
+        
+        if(!housingListings.equals(listingTitle)) return false;
+        if(!housingListings.equals(housingType)) return false;
+        if(!housingListings.equals(amenities)) return false;
+            
+        return true;
     }
     
-    public boolean FindByName() {
-        return false;       
+    public boolean FindHouse(String listingTitle) {
+        if(housingListings.equals(listingTitle))return true;
+        return false;
+    }
+    
+    public boolean FindByName(String listingTitle) {
+        if(!FindHouse(listingTitle))return false;
+        return true;
     }
 }
