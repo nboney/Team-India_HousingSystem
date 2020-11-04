@@ -19,7 +19,7 @@ public class HousingSystem {
     
     //Returns true if item is found, and false otherwise
     public boolean NoneStudentLogin(String username, String password) {
-        if(users.equals(username) {
+        if(users.equals(username) && users.equals(password)) {
             return users.leaserLogin(username, password);
         }
         else {
