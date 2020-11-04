@@ -16,4 +16,32 @@ public class HousingSystem {
     public boolean NoneStudentLogin(String username, String password) {
         return users.leaserLogin(username, password);
     }  
+     
+    public boolean UserSignUp() {
+        return false;   
+    }
+    
+    public boolean NewStudent() {
+        return false;     
+    }
+    
+    public boolean NewPropertyManagers() {
+        return false;     
+    }
+    
+    public boolean StudentMainMenu() {
+        return false;      
+    }
+    
+    public boolean PropertyManagersMainMenu() {
+        return false;    
+    }
+    
+    public boolean FindHouse() {
+        return false;  
+    }
+    
+    public boolean FindByName() {
+        return false;       
+    }
 }
