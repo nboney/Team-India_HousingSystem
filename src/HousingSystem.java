@@ -47,23 +47,28 @@ public class HousingSystem {
         return false;    
     }
     
-    public boolean FindHouse(String listingTitle, HousingType housingType,
+    public ArrayList<HousingListing> FindHouse(String listingTitle, HousingType housingType,
                              ArrayList<Amenities> amenities) {
+        ArrayList<HousingListing> results = null;
         
-        if(!housingListings.equals(listingTitle)) return false;
-        if(!housingListings.equals(housingType)) return false;
-        if(!housingListings.equals(amenities)) return false;
+        for(int i = 0; i < this.housingListingList.size(); ++i) {
             
-        return true;
+            if(listingTitle != null && housingType != null 
+               && amenities != null) {
+                results.add(this.housingListingList.get(i));
+            } 
+        }    
+        return results;    
     }
     
-    public boolean FindHouseName(String listingTitle) {
-        if(housingListings.equals(listingTitle))return true;
-        return false;
-    }
-    
-    public boolean FindByName(String listingTitle) {
-        if(!FindHouseName(listingTitle))return false;
-        return true;
-    }
+    public ArrayList<HousingListing> FindByName(String listingTitle) {
+        ArrayList<HousingListing> results = null;
+        
+        for(int i = 0; i < this.housingListingList.size(); ++i) {
+            if(listingTitle != null) {
+                results.add(this.housingListingList.get(i));
+            }
+        }
+        return results;
+    } 
 }
