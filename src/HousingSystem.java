@@ -101,4 +101,41 @@ public class HousingSystem {
         }
         return results;
     } 
-}
+	
+    public boolean FindByNumsOfBedroomAndBathRoom() {
+        return false;
+    }
+    
+    public ArrayList<HousingListing> FindByType(HousingType housingType) {
+        ArrayList<HousingListing> results = null;
+        
+        for(int i = 0; i < this.housingListingList.size(); ++i) {
+            if(housingSearch.equals(housingType)) {
+                results.add(this.housingListingList.get(i));
+            }
+        }
+        return results;    
+    }
+    
+    public ArrayList<HousingListing> FindByAmenities(ArrayList<Amenities> amenities) {
+        ArrayList<HousingListing> results = null;
+        
+        for(int i = 0; i < this.housingListingList.size(); ++i) {
+            if(housingSearch.equals(amenities)) {
+                results.add(this.housingListingList.get(i));
+            }
+        }
+        return results;
+    }
+    
+    
+    public boolean SignLease() {
+        return false;
+        
+    }
+    
+    public boolean PrintHousingInformation() {
+        return false;
+        
+    }
+}	
