@@ -9,12 +9,22 @@ public class HousingSystem {
     
     //Returns true if item is found, and false otherwise
     public boolean StudentUserLogin(String username, String password) {
-        return users.studentLogin(username, password);
+        if(users.equals(username) && users.equals(password)) {
+            return users.studentLogin(username, password);
+        }
+        else {
+            return false;
+        }
     }
     
     //Returns true if item is found, and false otherwise
     public boolean NoneStudentLogin(String username, String password) {
-        return users.leaserLogin(username, password);
+        if(users.equals(username) {
+            return users.leaserLogin(username, password);
+        }
+        else {
+            return false;
+        }
     }  
      
     public boolean UserSignUp() {
