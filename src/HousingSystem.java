@@ -27,24 +27,48 @@ public class HousingSystem {
         }
     }  
      
-    public boolean UserSignUp() {
-        return false;   
+    public boolean UserSignUp(String username, String password) {
+        if(user.equals(users)) {
+            return true;
+        else {
+            return false:
+        }
     }
     
-    public boolean NewStudent() {
-        return false;     
+    public boolean NewStudent(String studentuser, String username, String password) {
+	    if(users.equals(username) && users.equals(password)) { 
+	    	return true;
+	    }
+	    else {
+	        return false;     
+	    }
     }
     
-    public boolean NewPropertyManagers() {
-        return false;     
+    public boolean NewPropertyManagers(String propertymanagers) {
+	    if(users.equals(propertymanagers)) { 
+            return true;
+	    }
+	    else {
+            return false;     
+	    }     
     }
     
-    public boolean StudentMainMenu() {
-        return false;      
+    public boolean StudentMainMenu(String student) {
+        if(users.equals(student)) {
+            return true;
+        }
+        else {
+            return false;
+        }      
     }
     
-    public boolean PropertyManagersMainMenu() {
-        return false;    
+    public boolean PropertyManagersMainMenu(String propertymanagers) {
+        if(users.equals(propertymanagers)) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
     
     public ArrayList<HousingListing> FindHouse(String listingTitle, HousingType housingType,
