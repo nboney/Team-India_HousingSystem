@@ -6,20 +6,39 @@ import java.nio.file.Files;
 import java.io.FileWriter;
 
 public class LeaseAgreement { 
-	private static String text = "LANDLOARD";
-	private String landlord = "";
-	private String tenants = "";
-	private String propertyAddress;
-	private int num_bed;
-	private int num_bath;
-	private int sczip;
-    	private int startdate;
-    	private int enddate;
-    	private int rent;
-    	private String paymentAddress;
-    	private int damages;
-    	private String tenant1 = "";
+	private static final String tenant = "";  //it would add whatever is passed in from the UI, right?
+	private static final String landloard = "";
+	private static final String propertyAddress = "";
+	private static final String paymentAddress = "";
+	private static final CharSequence num_bed = null;
+	private static final CharSequence num_bath = null;
+	private static final CharSequence sczip = null;
+    	private static final CharSequence startdate = null;
+    	private static final CharSequence enddate = null;
+    	private static final CharSequence rent = null;
+	private static final CharSequence damage = null;
     
+	public LeaseAgreement(String tenant1, String tenant2, HousingListing housingListing, String startDate, String endDate) {
+		
+		File oglease = new File("/Users/sonaguzzarlamudi/Desktop/LeaseAgreement.txt");
+		Scanner scanner = new Scanner(oglease);
+		FileWriter writer = new FileWriter("/Users/sonaguzzarlamudi/Desktop/NewLeaseAgreement.txt");
+		String line = "";
+		while(scanner.hasNextLine()) {
+			line.replace("<LANDLOARD>", this.landloard);
+			line.replace("<TENANT>", this.tenant);
+			line.replace("<PROPERTY_ADDRESS>", this.propertyAddress);
+			line.replace("<PAYMENT_ADDRESS>", this.paymentAddress);
+			line.replace("<NUM_BED>", this.num_bed);
+			line.replace("<NUM_BATH>", this.num_bath);
+			line.replace("<ZIP>", this.sczip);
+			line.replace("<START DATE>", this.startdate);
+			line.replace("<END DATE>", this.enddate);
+			line.replace("<DAMAGE COST>", this.damage);
+		}
+	}
+}
+	/*
     public LeaseAgreement() {
     	
     }
@@ -30,57 +49,13 @@ public class LeaseAgreement {
     	File oglease = new File("/Users/sonaguzzarlamudi/Desktop/LeaseAgreement.txt");
 		Scanner scanner = new Scanner(oglease);
 		FileWriter writer = new FileWriter("/Users/sonaguzzarlamudi/Desktop/NewLeaseAgreement.txt");
-		String line = "";
-		while(scanner.hasNextLine()) {
-			
-			read();
-			
-			line = scanner.nextLine();
-			line = line.replaceAll(text, replacement);
-			writer.write(line);	
+		String line = "";	
 		}
 		scanner.close();
 		writer.close();
     }
-
-	private static void read() throws FileNotFoundException 
-	{
-		File oglease = new File("/Users/sonaguzzarlamudi/Desktop/LeaseAgreement.txt");
-		Scanner scanner = new Scanner(oglease);
-		if(scanner.hasNext("LANDLOARD")) {
-			//replace
-		}
-		else if (scanner.hasNext("TENANT")) {
-			
-		}
-		else if (scanner.hasNext("PROPERTY ADDRESS")) {
-			
-		}
+	private String read(String line) {
 		
-		
+		return line;
 	}
-    
-    
-    
-	/*
-    public static void main(String[] args) throws IOException {
-    	
-    	String[] text = {"LANDLOARD", "TENANT (s)"};
-    	
-    	for(int i = 0; i < text.length; i++) {
-    		
-    		System.out.println("What is the "+text[0]+" name?");
-    		Scanner keyboard = new Scanner(System.in);
-            String newLL = keyboard.nextLine();
-            
-            modifytxt("c:/Users/sonaguzzarlamudi/Desktop/LeaseAgreement.txt", ""+text+"", 
-            		" "+newLL+" ", "d:/Users/sonaguzzarlamudi/Desktop/NewLease.txt");
-        
-    	}
-    
-    }*/
-}
-
-    	
-    	
-    
+}*/ 
