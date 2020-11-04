@@ -1,10 +1,14 @@
 public class HousingSystem {
     private Users users;
     private Reviews reviews;
+    private static HousingListings housingListings;
+    private ArrayList<HousingListing> housingListingList;
       
     public HousingSystem() {
         users = Users.getInstance();
         reviews = Reviews.getInstance();
+        housingListings = HousingListings.getInstance();
+        this.housingListingList = housingListingList;        
     }
     
     //Returns true if item is found, and false otherwise
@@ -28,10 +32,11 @@ public class HousingSystem {
     }  
      
     public boolean UserSignUp(String username, String password) {
-        if(user.equals(users)) {
+        if(users.equals(users)) {
             return true;
+        }
         else {
-            return false:
+            return false;
         }
     }
     
