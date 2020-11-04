@@ -23,7 +23,7 @@ public class HousingUI {
         User user = new User();
         StudentUser studentUser = new StudentUser();
         LeasingUser leasingUser = new LeasingUser();
-        HousingListings housingListings = HousingListings.getInstance();
+        HousingListing housingListing = HousingListing();
         Reviews reviews = Reviews.getInstance();
         Amenities amenities = Amenities.getAmenities;
         LeaseAgreement leaseAgreement = LeaseAgreement.getLeaseAgreement;
@@ -71,7 +71,7 @@ public class HousingUI {
     private int getCommand(int numCommands) {
         System.out.println("Please Enter the command number" + "\n");
         sc = new Scanner(System.in);
-        int command = Integer.parseInt(String.valueOf(sc)) - 1;
+        int command = sc.nextInt() - 1;
         if(command >= 0 && command <= numCommands -1) return command;
 
         return -1;
@@ -96,7 +96,7 @@ public class HousingUI {
 
     public void PropertyManagersLogin(){
         int command;
-        displayMenu(PropertyManagers);
+        displayMenu(PropertyManagersMainMenu);
         command = getCommand(PropertyManagers.length);
 
         }
@@ -195,7 +195,7 @@ public class HousingUI {
 
         switch (command){
             case (0):
-                UploadNewHouse();
+                //UploadNewHouse();
                 break;
             case (1):
                 SignLease();
@@ -218,7 +218,7 @@ public class HousingUI {
 
         switch (command){
             case (0):
-                FindByTitle();
+                FindByName();
                 break;
             case (1):
                 FindByType();
@@ -235,8 +235,8 @@ public class HousingUI {
             sc = new Scanner(System.in);
             String propertyName = sc.nextLine();
             System.out.println("\n" +"Searching......" + "\n");
-            HousingListing housingListing = HousingListing.getHousingListing;
             if (propertyName == null)return;
+            HousingListing housingListing = HousingListing.getHousingListing;
             if (housingListing.getListingName(propertyName)){
                 System.out.println();
             }else {
@@ -245,7 +245,38 @@ public class HousingUI {
 
         }
 
+        public void FindByNumsOfBedroomAndBathRoom(){
+            System.out.println("Please enter the numbers of Bedroom you want");
+            sc = new Scanner(System.in);
+            Integer numOfBedroom = sc.nextInt();
+            System.out.println("Please enter the numbers of Bedroom you want");
+            Integer numOfBathroom = sc.nextInt();
+            if (numOfBedroom < 0 || numOfBathroom < 0)return;
+            System.out.println("\n" +"Searching......" + "\n");
 
+            if (numOfBathroom && numOfBedroom == ){
+                System.out.println();
+            }
+        }
+
+        public void FindByType(){
+
+        }
+
+        public void FindByAmenities(){
+            System.out.println("Please tell us what kind of amenities you would like" + "\n");
+            displayMenu(HouseAmenities);
+
+
+        }
+
+        public void SignLease(){
+
+        }
+
+        public void PrintHousingInformation(){
+            System.out.println();
+        }
 
 
 
