@@ -32,12 +32,8 @@ public class HousingListing {
         this.price = price;
         this.housingType = housingType;
         this.amenities = amenities;
-<<<<<<< HEAD
 	}
-=======
-        this.manager = manager;
-    }
->>>>>>> af42c5b5f0dc4ac27932bd8cf672e3f4e370c54e
+    
 	
     public String getListingID() {
 	return this.listingID;
@@ -140,10 +136,9 @@ public class HousingListing {
         return reviews;
     }
 	
-<<<<<<< HEAD
     public void addNewReview(StudentUser user, int rating, String comment) {
+    }
   
-=======
    /**
     public void addReview(Review review, StudentUser user, int rating, String comment) {
         review.addReview(review, user, rating, comment);
@@ -167,18 +162,12 @@ public class HousingListing {
     	this.amenities.add(amenity);
     }
 	
-<<<<<<< HEAD
     public String toString() {
     	return this.listingTitle + "\n" + this.address + "\nProperty Manager: " + this.managerName +
     			"\n$" + this.price + " per month\n" + this.distance + " miles from campus\n";
-=======
-    public LeasingUser getManager() {
-	return this.manager;
->>>>>>> af42c5b5f0dc4ac27932bd8cf672e3f4e370c54e
     }
 	
     public void setManager(LeasingUser leaser) {
-	this.manager = leaser;
-	this.managerUsername = leaser.getUsername();
+    	this.managerUsername = leaser.getUsername();
     }	
 }

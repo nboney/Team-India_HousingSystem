@@ -29,7 +29,6 @@ public class Review {
         return comment;
     }
     
-<<<<<<< HEAD
     public void setReviewID(String listingID) {
     	this.listingID = listingID;
     }
@@ -37,13 +36,11 @@ public class Review {
     public String getReviewID() {
     	return this.listingID;
     }
-=======
    /**
     public void addReview(Review review, StudentUser user, int rating, String comment) {
         reviews.add(review);
     }
     */
->>>>>>> af42c5b5f0dc4ac27932bd8cf672e3f4e370c54e
     
     @Override
     public String toString() {

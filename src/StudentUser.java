@@ -47,14 +47,8 @@ public class StudentUser extends RegisteredUser {
     
     @Override
     public String toString() {
-<<<<<<< HEAD
         return this.firstName + " " + this.lastName + "\n" + this.username + this.studentID +
         		"\n" + this.phone;
-=======
-        return "Name: " + this.firstName + " " + this.lastName +
-                "\nPassword: " + this.password + "\nPhone: " +
-                this.phone + "\nEmail: " + this.email +
-                "\nStudentID: " + this.studentID;;
->>>>>>> af42c5b5f0dc4ac27932bd8cf672e3f4e370c54e
+
     }
 }
