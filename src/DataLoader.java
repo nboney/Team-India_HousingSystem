@@ -1,4 +1,6 @@
-
+/*
+ * 
+ */
 import java.io.FileReader;
 import java.util.ArrayList;
 import org.json.simple.JSONArray;
@@ -8,6 +10,7 @@ import org.json.simple.parser.JSONParser;
 public class DataLoader extends DataConstants {
 	
 	public static ArrayList<StudentUser> loadStudents() {
+		/* Creates a new StudentUser array and new DataLoader */
 		ArrayList<StudentUser> students = new ArrayList<StudentUser>();
 		DataLoader dataLoader = new DataLoader();
 		
@@ -50,6 +53,10 @@ public class DataLoader extends DataConstants {
 		
 	}
 	
+	/**
+	 * method checks if the listing ID is empty, and if it is, the listing that the 
+	 * student favorited is added
+	 */
 	private void mapStudentFavorites(StudentUser student, ArrayList<String> favoriteIDs, HousingListings housingListings) {
 		for (int j = 0; j < favoriteIDs.size(); ++j) {
 			HousingListing favListing = housingListings.retreiveByID(favoriteIDs.get(j).toString());
@@ -60,6 +67,9 @@ public class DataLoader extends DataConstants {
 		}
 	}
 	
+	/**
+	 * 
+	 */
 	public static ArrayList<LeasingUser> loadLeasers() {
 		ArrayList<LeasingUser> leasers = new ArrayList<LeasingUser>();
 		DataLoader dataLoader = new DataLoader();
@@ -82,7 +92,7 @@ public class DataLoader extends DataConstants {
 				String password = (String)userJSON.get(USERS_PASSWORD);
 				String phone = (String)userJSON.get(USERS_PHONE);
 				String email = (String)userJSON.get(USERS_EMAIL);
-                String address = (String)userJSON.get(LEASERS_ADDRESS);
+                		String address = (String)userJSON.get(LEASERS_ADDRESS);
 				String rating = (String)userJSON.get(USERS_RATING);
 				String ratingCount = (String)userJSON.get(USERS_RATING_COUNT);
 				ArrayList<String> propertyIDs = (ArrayList<String>)userJSON.get(LEASERS_PROPERTIES);
