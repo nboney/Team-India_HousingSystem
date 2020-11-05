@@ -15,6 +15,9 @@ public class LeasingUser extends RegisteredUser {
 		this.address = address;
 	}
 	
+	/**
+	 * 
+	 */
 	public void createListing(String listingTitle, String address, String description, double price,
 			                  double distance, HousingType housingType, ArrayList<Amenities> amenities,
 			                  String managerUsername, int bedrooms, int bathrooms, int availableUnits) {
