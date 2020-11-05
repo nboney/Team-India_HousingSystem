@@ -18,6 +18,10 @@ public class Reviews {
 		
 	}
 	
+	public ArrayList<Review> getReviewList() {
+		return this.reviewList;
+	}
+	
 	public ArrayList<Review> getReviews(String listingID) {
 		ArrayList<Review> listingReviews = new ArrayList<Review>();
 		

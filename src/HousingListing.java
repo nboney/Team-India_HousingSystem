@@ -127,6 +127,10 @@ public class HousingListing {
     	return this.bathrooms;
     }
     
+    public int getAvailableUnits() {
+    	return this.availableUnits;
+    }
+    
     public HousingType getHousingType() {
     	return this.housingType;
     }
@@ -150,8 +154,22 @@ public class HousingListing {
     	this.reviews.add(review);
     }
     
+    public String getHousingTypeString() {
+    	return this.housingType.name();
+    }
+    
     public ArrayList<Amenities> getAmenities() {
         return this.amenities;
+    }
+    
+    public ArrayList<String> getAmenitiesString() {
+    	ArrayList<String> amenitiesList = new ArrayList<String>();
+    	
+    	for(int i = 0; i < this.amenities.size(); ++i) {
+    		amenitiesList.add(this.amenities.get(i).name());
+    	}
+    	
+    	return amenitiesList;
     }
     
     public void setAmenities(ArrayList<Amenities> amenities) {

@@ -40,6 +40,10 @@ public class Users {
 		return this.studentList;
 	}
 	
+	public ArrayList<LeasingUser> getLeaserList() {
+		return this.leaserList;
+	}
+	
 	public boolean studentLogin(String username, String password) {
 		for(int i = 0; i < studentList.size(); ++i) {
 			if(studentList.get(i).getUsername().contentEquals(username) &&

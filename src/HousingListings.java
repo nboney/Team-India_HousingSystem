@@ -4,7 +4,7 @@ public class HousingListings {
 	private static HousingListings housingListings;
 	private ArrayList<HousingListing> housingListingList;
 	
-	public HousingListings() {
+	private HousingListings() {
 		housingListingList = DataLoader.loadListings();
 	}
 	
