@@ -27,6 +27,16 @@ public class StudentUser extends RegisteredUser {
     public ArrayList<HousingListing> getFavorites() {
         return this.favorites;    
     }
+    
+    public ArrayList<String> getFavoriteIDs() {
+    	ArrayList<String> favoriteIDs = new ArrayList<String>();
+    	
+    	for(int i = 0; i < this.favorites.size(); ++i) {
+    		favoriteIDs.add(this.favorites.get(i).getListingID());
+    	}
+    	
+    	return favoriteIDs;
+    }
     /*
     public void leaveUserRating(LeasingUser user, int rating) {
     }*/
@@ -38,6 +48,10 @@ public class StudentUser extends RegisteredUser {
     public void setRatingInfo(int rating, int ratingCount) {
     	this.rating = rating;
     	this.ratingCount = ratingCount;
+    }
+    
+    public String getStudentID() {
+    	return this.studentID;
     }
     //Incomplete method - going to revisit later
     /*

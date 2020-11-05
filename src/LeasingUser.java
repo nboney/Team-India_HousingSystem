@@ -35,6 +35,10 @@ public class LeasingUser extends RegisteredUser {
 
 	}
 	
+	public String getAddress() {
+		return this.address;
+	}
+	
 	public void addProperty(HousingListing listing) {
 		this.listings.add(listing);
 	}
@@ -42,6 +46,16 @@ public class LeasingUser extends RegisteredUser {
 	public void deleteListing(String listingID, HousingListing listing, HousingListings housingListings) {
 		this.listings.remove(listing);
 		housingListings.removeListing(listing);
+	}
+	
+	public ArrayList<String> getPropertyIDs() {
+		ArrayList<String> propertyIDs = new  ArrayList<String>();
+		
+		for(int i = 0; i < this.listings.size(); ++i) {
+			propertyIDs.add(this.listings.get(i).getListingID());
+		}
+		
+		return propertyIDs;
 	}
 	
 	/*

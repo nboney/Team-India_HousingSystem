@@ -39,6 +39,13 @@ public class RegisteredUser extends User {
         this.rating = parseInt;
         this.ratingCount = parseInt2;     
   }*/
+  public String getFirstName() {
+	  return this.firstName;
+  }
+  
+  public String getLastName() {
+	  return this.lastName;
+  }
   
   public String getUsername() {
 	  return this.username;
@@ -48,7 +55,27 @@ public class RegisteredUser extends User {
 	  return this.password;
   }
   
+  public String getPhone() {
+	  return this.phone;
+  }
+  
+  public String getEmail() {
+	  return this.email;
+  }
+  
+  public int getRating() {
+	  return this.rating;
+  }
+  
+  public int getRatingCount() {
+	  return this.ratingCount;
+  }
+  
   public void setID(String id) {
 	  this.userID = id;
+  }
+  
+  public String getID() {
+	  return this.userID;
   }
 }

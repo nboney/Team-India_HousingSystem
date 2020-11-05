@@ -31,6 +31,7 @@ public abstract class DataConstants {
 	protected static final String LISTINGS_TYPE = "housingType";
 	protected static final String LISTINGS_AMENITIES = "amenities";
 	protected static final String LISTINGS_MANAGER_USERNAME = "manager";
+	protected static final String LISTINGS_MANAGER_NAME = "managerName";
 	protected static final String LISTINGS_BEDROOMS = "bedrooms";
 	protected static final String LISTINGS_BATHROOMS = "bathrooms";
 	protected static final String LISTINGS_UNITS = "units";
