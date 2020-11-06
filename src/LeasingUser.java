@@ -16,7 +16,7 @@ public class LeasingUser extends RegisteredUser {
 	}
 	
 	/**
-	 * 
+	 * Generates a new house listing by filling in the same attributes
 	 */
 	public void createListing(String listingTitle, String address, String description, double price,
 			                  double distance, HousingType housingType, ArrayList<Amenities> amenities,
@@ -32,7 +32,6 @@ public class LeasingUser extends RegisteredUser {
 		
 		listings.add(newListing);
 		housingListings.addListing(newListing);
-
 	}
 	
 	public String getAddress() {
@@ -48,13 +47,13 @@ public class LeasingUser extends RegisteredUser {
 		housingListings.removeListing(listing);
 	}
 	
+	/** Creates an array that identifies the properties */
 	public ArrayList<String> getPropertyIDs() {
-		ArrayList<String> propertyIDs = new  ArrayList<String>();
+		ArrayList<String> propertyIDs = new ArrayList<String>();
 		
 		for(int i = 0; i < this.listings.size(); ++i) {
 			propertyIDs.add(this.listings.get(i).getListingID());
 		}
-		
 		return propertyIDs;
 	}
 	
@@ -68,11 +67,10 @@ public class LeasingUser extends RegisteredUser {
 		
 	}*/
 	
+	/** Collects and sets the user's ratings of the properties */
 	public void setRatingInfo(int rating, int ratingCount) {
     	this.rating = rating;
     	this.ratingCount = ratingCount;
     }
-	
-	
 	
 }
