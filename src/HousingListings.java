@@ -26,7 +26,7 @@ public class HousingListings {
 		 return null;
 	}
 	
-	public boolean haveListing(String listingTitle, int index) {
+	public boolean haveListingName(String listingTitle, int index) {
 		if(housingListingList.get(index).getListingTitle().contains(listingTitle)) {
 			return true;
 		}
@@ -34,7 +34,7 @@ public class HousingListings {
 		return false;
 	}
 	
-	public boolean haveListing(HousingType housingType, int index) {
+	public boolean haveListingType(HousingType housingType, int index) {
 		if(housingListingList.get(index).getHousingType().equals(housingType)) {
 			return true;
 		}
@@ -42,7 +42,35 @@ public class HousingListings {
 		return false;
 	}
 	
-	public boolean hasListing(ArrayList<Amenities> amenities, int index) {
+	public boolean haveListingUnderPrice(double price, int index) {
+		if(this.housingListingList.get(index).getPrice() <= price) {
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean haveListingBathrooms(int numOfBathrooms, int index) {
+		if(this.housingListingList.get(index).getBathrooms() == numOfBathrooms) {
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean haveListingBedrooms(int numOfBedrooms, int index) {
+		if(this.housingListingList.get(index).getBedrooms() == numOfBedrooms) {
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean haveListingsUnderDistance(double distance, int index) {
+		if(this.housingListingList.get(index).getDistance() <= distance) {
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean hasListingAmenities(ArrayList<Amenities> amenities, int index) {
 		ArrayList<Amenities> compareList = this.housingListingList.get(index).getAmenities();
 		
 		if(compareList.containsAll(amenities)) {
@@ -78,7 +106,7 @@ public class HousingListings {
 		return this.housingListingList;
 	}
 	
-	public ArrayList<HousingListing> housingSearch(String listingTitle){
+	/*public ArrayList<HousingListing> housingSearch(String listingTitle){
 		ArrayList<HousingListing> results = null;
 		for(int i = 0; i < this.housingListingList.size(); i++) {
 			if(this.haveListing(listingTitle, i)) {
@@ -87,30 +115,196 @@ public class HousingListings {
 		}
 		
 		return results;
-	}
+	}*/
 	
-	public ArrayList<HousingListing> housingSearch(HousingType housingType, ArrayList<Amenities> amenities) {
-		ArrayList<HousingListing> results = null;
-		for(int i = 0; i < this.housingListingList.size(); ++i) {
-			if(housingType != null) {
-				if(this.haveListing(housingType, i)) {
+	/**
+	 * Main HousingListings search algorithm.
+	 * @param housingType the type of property for the listing; HousingType
+	 * @param amenities List of amenities to be searched for; Amenities
+	 * @param numberOfBedrooms Number of bedrooms desired; int
+	 * @param numberOfBathrooms Number of bathrooms desired; int
+	 * @param price Ceiling of prices to be searched; double
+	 * @param maxDistance Ceiling of distance to be searched, double
+	 * @return
+	 */
+	public ArrayList<HousingListing> housingSearch(HousingType housingType, ArrayList<Amenities> amenities,
+			                                       int numberOfBedrooms, int numberOfBathrooms,
+			                                       double price, double maxDistance) {
+		ArrayList<HousingListing> results = new ArrayList<HousingListing>();
+		boolean housingTypeMatch = true;
+		boolean amenitiesMatch = true;
+		boolean priceMatch = true;
+		boolean bedroomMatch = true;
+		boolean bathroomMatch = true;
+		boolean distanceMatch = true;
+		
+		////////////////////// Housing Type Search
+		if(housingType != null) {
+			for(int i = 0; i < this.housingListingList.size(); ++i) {
+				if(this.haveListingType(housingType, i)) {
 					results.add(this.housingListingList.get(i));
-				} else {
-					continue;
 				}
 			}
-	
-			if(amenities != null) {
-				if(this.hasListing(amenities, i)) {
-					if(!results.contains(this.housingListingList.get(i))) {
-						results.add(this.housingListingList.get(i));
-					}
-				} else {
-					results.remove((results.size()-1));
-				}
+			if(results.isEmpty()) {
+				housingTypeMatch = false;
 			}
 		}
+		if(!housingTypeMatch) {
+			return results;
+		}
+		///////////////////////////Price Search
+		if(price != 0) {
+			if(results.isEmpty()) {
+				for(int i = 0; i < this.housingListingList.size(); ++i) {
+					if(this.haveListingUnderPrice(price, i)) {
+						results.add(this.housingListingList.get(i));
+					}
+				}
+				if(results.isEmpty()) {
+					priceMatch = false;
+				}
+			} else {
+				for(int i = 0; i < results.size(); ++i) {
+					if(results.get(i).getPrice() <= price) {
+						continue;
+					} else {
+						results.remove(i);
+						--i;
+					}
+				}
+			}
+			
+			if(results.isEmpty()) {
+				priceMatch = false;
+			}
+		}
+	
+		if(!priceMatch) {
+			return results;
+		}
+		//////////////////////////Distance Search
 		
+		if(maxDistance != 0) {
+			if(results.isEmpty()) {
+				for(int i = 0; i < this.housingListingList.size(); ++i) {
+					if(this.haveListingsUnderDistance(maxDistance, i)) {
+						results.add(this.housingListingList.get(i));
+					}
+				}
+				if(results.isEmpty()) {
+					distanceMatch = false;
+				}
+			} else {
+				for(int i = 0; i < results.size(); ++i) {
+					if(results.get(i).getDistance() <= maxDistance) {
+						continue;
+					} else {
+						results.remove(i);
+						--i;
+					}
+				}
+			}
+			
+			if(results.isEmpty()) {
+				distanceMatch = false;
+			}
+		}
+	
+		if(!distanceMatch) {
+			return results;
+		}
+		///////////////////Bedrooms
+		if(numberOfBedrooms != 0) {
+			if(results.isEmpty()) {
+				for(int i = 0; i < this.housingListingList.size(); ++i) {
+					if(this.haveListingBedrooms(numberOfBedrooms, i)) {
+						results.add(this.housingListingList.get(i));
+					}
+				}
+				if(results.isEmpty()) {
+					bedroomMatch = false;
+				}
+			} else {
+				for(int i = 0; i < results.size(); ++i) {
+					if(results.get(i).getBedrooms() == numberOfBedrooms) {
+						continue;
+					} else {
+						results.remove(i);
+						--i;
+					}
+				}
+			}
+			
+			if(results.isEmpty()) {
+				bedroomMatch = false;
+			}
+		}
+	
+		if(!bedroomMatch) {
+			return results;
+		}
+		///////////////////////// Bathrooms
+		if(numberOfBathrooms != 0) {
+			if(results.isEmpty()) {
+				for(int i = 0; i < this.housingListingList.size(); ++i) {
+					if(this.haveListingBathrooms(numberOfBathrooms, i)) {
+						results.add(this.housingListingList.get(i));
+					}
+				}
+				if(results.isEmpty()) {
+					bathroomMatch = false;
+				}
+			} else {
+				for(int i = 0; i < results.size(); ++i) {
+					if(results.get(i).getBathrooms() == numberOfBathrooms) {
+						continue;
+					} else {
+						results.remove(i);
+						--i;
+					}
+				}
+			}
+			
+			if(results.isEmpty()) {
+				bathroomMatch = false;
+			}
+		}
+	
+		if(!bathroomMatch) {
+			return results;
+		}
+		///////////////////////// Amenities
+		if(!amenities.isEmpty()) {
+			if(results.isEmpty()) {
+				for(int i = 0; i < this.housingListingList.size(); ++i) {
+					if(this.hasListingAmenities(amenities, i)) {
+						results.add(this.housingListingList.get(i));
+					}
+				}
+				if(results.isEmpty()) {
+					amenitiesMatch = false;
+				}
+			} else {
+				for(int i = 0; i < results.size(); ++i) {
+					if(results.get(i).getAmenities().containsAll(amenities)) {
+						continue;
+					} else {
+						results.remove(i);
+						--i;
+					}
+				}
+			}
+			
+			if(results.isEmpty()) {
+				amenitiesMatch = false;
+			}
+		}
+	
+		if(!amenitiesMatch) {
+			return results;
+		}
+		
+		//////Results return
 		return results;
 	}
 }
