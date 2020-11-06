@@ -5,6 +5,7 @@ public class HousingListing {
     private String listingID;
     private String listingTitle;
     private String address;
+    private String zipcode;
     private String billingAddress;
     private String description;
     private int rating;
@@ -57,6 +58,14 @@ public class HousingListing {
     public void setAddress(String address) {
     	this.address = address;
   
+    }
+    
+    public void setZip(String zipcode) {
+    	this.zipcode = zipcode;
+    }
+    
+    public String getZip() {
+    	return this.zipcode;
     }
     
     public String getPaymentAddress() {
@@ -181,8 +190,12 @@ public class HousingListing {
     }
 	
     public String toString() {
-    	return this.listingTitle + "\n" + this.address + "\nProperty Manager: " + this.managerName +
-    			"\n$" + this.price + " per month\n" + this.distance + " miles from campus\n";
+    	return "\n----------\n" + this.listingTitle + "\n" + this.address + "\nProperty Manager: " + this.managerName +
+    			"\n$" + this.price + " per month\n" + this.distance + " miles from campus\n" +
+    			"Type of housing: " + this.housingType.name() + "\nNumber of bedrooms: " + this.bedrooms +
+    			"\nNumber of Bathrooms: " + this.bathrooms + "\nAvailable units: " + this.availableUnits +
+    			"\nAmenities: " + this.amenities.toString().join(", ", amenities.toString()) +
+    			"\n" + this.description + "\n----------\n";
     }
 	
     public void setManager(LeasingUser leaser) {

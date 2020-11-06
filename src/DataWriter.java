@@ -37,6 +37,7 @@ public class DataWriter extends DataConstants {
 		studentDetails.put(USERS_FIRST_NAME, student.getFirstName());
 		studentDetails.put(USERS_LAST_NAME, student.getLastName());
 		studentDetails.put(USERS_USERNAME, student.getUsername());
+		studentDetails.put(USERS_PASSWORD, student.getPassword());
 		studentDetails.put(USERS_PHONE, student.getPhone());
 		studentDetails.put(USERS_EMAIL, student.getEmail());
 		studentDetails.put(USERS_RATING, String.valueOf(student.getRating()));
@@ -76,6 +77,7 @@ public class DataWriter extends DataConstants {
 		leaserDetails.put(USERS_FIRST_NAME, leaser.getFirstName());
 		leaserDetails.put(USERS_LAST_NAME, leaser.getLastName());
 		leaserDetails.put(USERS_USERNAME, leaser.getUsername());
+		leaserDetails.put(USERS_PASSWORD, leaser.getPassword());
 		leaserDetails.put(USERS_PHONE, leaser.getPhone());
 		leaserDetails.put(USERS_EMAIL, leaser.getEmail());
 		leaserDetails.put(LEASERS_ADDRESS, leaser.getAddress());
@@ -98,7 +100,7 @@ public static void saveHousingListings() {
 				jsonListings.add(getListingJSON(listings.get(i)));
 		}
 			
-		try (FileWriter file = new FileWriter(LEASERS_FILE_NAME)) {
+		try (FileWriter file = new FileWriter(LISTINGS_FILE_NAME)) {
 				
 			file.write(jsonListings.toJSONString());
 			file.flush();
@@ -119,16 +121,16 @@ public static void saveHousingListings() {
 		listingDetails.put(LISTINGS_TITLE, listing.getListingTitle());
 		listingDetails.put(LISTINGS_ADDRESS, listing.getAddress());
 		listingDetails.put(LISTINGS_DESCRIPTION, listing.getDescription());
-		listingDetails.put(LISTINGS_PRICE, listing.getPrice());
-		listingDetails.put(LISTINGS_DISTANCE, listing.getDistance());
+		listingDetails.put(LISTINGS_PRICE, String.valueOf(listing.getPrice()));
+		listingDetails.put(LISTINGS_DISTANCE, String.valueOf(listing.getDistance()));
 		listingDetails.put(LISTINGS_TYPE, listing.getHousingTypeString());
 		listingDetails.put(LISTINGS_MANAGER_NAME, listing.getManagerName());
-		listingDetails.put(LISTINGS_BEDROOMS, listing.getBedrooms());
-		listingDetails.put(LISTINGS_BATHROOMS, listing.getBathrooms());
-		listingDetails.put(LISTINGS_UNITS, listing.getAvailableUnits());
+		listingDetails.put(LISTINGS_BEDROOMS, String.valueOf(listing.getBedrooms()));
+		listingDetails.put(LISTINGS_BATHROOMS, String.valueOf(listing.getBathrooms()));
+		listingDetails.put(LISTINGS_UNITS, String.valueOf(listing.getAvailableUnits()));
 		listingDetails.put(LISTINGS_AMENITIES, listing.getAmenitiesString());
-		listingDetails.put(LISTINGS_RATING, listing.getRating());
-		listingDetails.put(LISTINGS_RATING_COUNT, listing.getRatingCount());
+		listingDetails.put(LISTINGS_RATING, String.valueOf(listing.getRating()));
+		listingDetails.put(LISTINGS_RATING_COUNT, String.valueOf(listing.getRatingCount()));
 		
 		return listingDetails;
 	}
@@ -161,7 +163,7 @@ public static void saveHousingListings() {
 		JSONObject reviewDetails = new JSONObject();
 		//reviewDetails.put(REVIEWS_TITLE, review.getListingTitle());
 		reviewDetails.put(REVIEWS_AUTHOR, review.getAuthor());
-		reviewDetails.put(REVIEWS_RATING, review.getRating());
+		reviewDetails.put(REVIEWS_RATING, String.valueOf(review.getRating()));
 		reviewDetails.put(REVIEWS_COMMENT, review.getComment());
 		reviewDetails.put(REVIEWS_LISTING_ID, review.getReviewID());
 		

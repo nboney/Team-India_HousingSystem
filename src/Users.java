@@ -18,6 +18,10 @@ public class Users {
 		return users;
 	}
 	
+	public void addStudent(StudentUser student) {
+		this.studentList.add(student);
+	}
+	
 	public boolean haveStudent(String username, int index) {
 		if(studentList.get(index).getUsername().contentEquals(username)) {
 			return true;

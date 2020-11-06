@@ -47,9 +47,9 @@ public class DataLoader extends DataConstants {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		} 
 		
-		return null;
+		return students;
 		
 	}
 	
@@ -60,9 +60,9 @@ public class DataLoader extends DataConstants {
 	private void mapStudentFavorites(StudentUser student, ArrayList<String> favoriteIDs, HousingListings housingListings) {
 		for (int j = 0; j < favoriteIDs.size(); ++j) {
 			HousingListing favListing = housingListings.retreiveByID(favoriteIDs.get(j).toString());
-			if(favListing.getListingID().isEmpty()) {
+			/*if(favListing.getListingID().isEmpty()) {
 				continue;
-			}
+			}*/
 			student.addFavorites(favListing);
 		}
 	}
@@ -161,7 +161,7 @@ public class DataLoader extends DataConstants {
 				listings.get(i).setListingID(listingID);
 				listings.get(i).setRating(Integer.parseInt(rating));
 				listings.get(i).setRatingCount(Integer.parseInt(ratingCount));
-				dataLoader.mapListingReviews(listings.get(i), listingID);
+				//dataLoader.mapListingReviews(listings.get(i), listingID);
 				
 			}
 			
@@ -199,32 +199,32 @@ public class DataLoader extends DataConstants {
 	}
 	
 	public ArrayList<Amenities> getAmenities(ArrayList<String> amenities) {
-		Amenities compareAmenity = null;
-		ArrayList<Amenities> amenitiesList = null;
+		//Amenities compareAmenity = null;
+		ArrayList<Amenities> amenitiesList = new ArrayList<Amenities>();
 		
 		for(int i = 0; i < amenities.size(); ++i) {
-			if (compareAmenity.BIKE_RACKS.name().contentEquals(amenities.get(i))) {
-				amenitiesList.add(compareAmenity.BIKE_RACKS);
-			} else if (compareAmenity.CATS.name().contentEquals(amenities.get(i))) {
-				amenitiesList.add(compareAmenity.CATS);
-			} else if (compareAmenity.DOGS.name().contentEquals(amenities.get(i))) {
-				amenitiesList.add(compareAmenity.DOGS);
-			} else if (compareAmenity.FURNISHED.name().contentEquals(amenities.get(i))) {
-				amenitiesList.add(compareAmenity.FURNISHED);
-			} else if (compareAmenity.GARBAGE_PICKUP.name().contentEquals(amenities.get(i))) {
-				amenitiesList.add(compareAmenity.GARBAGE_PICKUP);
-			} else if (compareAmenity.PARKING.name().contentEquals(amenities.get(i))) {
-				amenitiesList.add(compareAmenity.PARKING);
-			} else if (compareAmenity.ONSITE_LAUNDRY.name().contentEquals(amenities.get(i))) {
-				amenitiesList.add(compareAmenity.ONSITE_LAUNDRY);
-			} else if (compareAmenity.GARBAGE_PICKUP.name().contentEquals(amenities.get(i))) {
-				amenitiesList.add(compareAmenity.GARBAGE_PICKUP);
-			} else if (compareAmenity.WASHER_DRYER_CONNECTIONS.name().contentEquals(amenities.get(i))) {
-				amenitiesList.add(compareAmenity.WASHER_DRYER_CONNECTIONS);
-			} else if (compareAmenity.WASHER_DRYER_INCLUDED.name().contentEquals(amenities.get(i))) {
-				amenitiesList.add(compareAmenity.WASHER_DRYER_INCLUDED);
-			} else if (compareAmenity.WHEELCHAIR_ACCESSIBLE.name().contentEquals(amenities.get(i))) {
-				amenitiesList.add(compareAmenity.WHEELCHAIR_ACCESSIBLE);
+			if (Amenities.BIKE_RACKS.name().contentEquals(amenities.get(i))) {
+				amenitiesList.add(Amenities.BIKE_RACKS);
+			} else if (Amenities.CATS.name().contentEquals(amenities.get(i))) {
+				amenitiesList.add(Amenities.CATS);
+			} else if (Amenities.DOGS.name().contentEquals(amenities.get(i))) {
+				amenitiesList.add(Amenities.DOGS);
+			} else if (Amenities.FURNISHED.name().contentEquals(amenities.get(i))) {
+				amenitiesList.add(Amenities.FURNISHED);
+			} else if (Amenities.GARBAGE_PICKUP.name().contentEquals(amenities.get(i))) {
+				amenitiesList.add(Amenities.GARBAGE_PICKUP);
+			} else if (Amenities.PARKING.name().contentEquals(amenities.get(i))) {
+				amenitiesList.add(Amenities.PARKING);
+			} else if (Amenities.ONSITE_LAUNDRY.name().contentEquals(amenities.get(i))) {
+				amenitiesList.add(Amenities.ONSITE_LAUNDRY);
+			} else if (Amenities.GARBAGE_PICKUP.name().contentEquals(amenities.get(i))) {
+				amenitiesList.add(Amenities.GARBAGE_PICKUP);
+			} else if (Amenities.WASHER_DRYER_CONNECTIONS.name().contentEquals(amenities.get(i))) {
+				amenitiesList.add(Amenities.WASHER_DRYER_CONNECTIONS);
+			} else if (Amenities.WASHER_DRYER_INCLUDED.name().contentEquals(amenities.get(i))) {
+				amenitiesList.add(Amenities.WASHER_DRYER_INCLUDED);
+			} else if (Amenities.WHEELCHAIR_ACCESSIBLE.name().contentEquals(amenities.get(i))) {
+				amenitiesList.add(Amenities.WHEELCHAIR_ACCESSIBLE);
 			}	
 		}
 		
