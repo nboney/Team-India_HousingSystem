@@ -78,11 +78,6 @@ public class HousingListings {
 		}
 		
 		return false;
-		/*for(int i = 0; i < compareList.size(); i++) {
-			for(int j = 0; j < amenities.size(); ++i) {
-				if(compareList.con)
-			}
-		}*/
 	}
 	
 	public HousingListing getListing(String listingTitle) {
@@ -106,16 +101,19 @@ public class HousingListings {
 		return this.housingListingList;
 	}
 	
-	/*public ArrayList<HousingListing> housingSearch(String listingTitle){
-		ArrayList<HousingListing> results = null;
-		for(int i = 0; i < this.housingListingList.size(); i++) {
-			if(this.haveListing(listingTitle, i)) {
-				results.add(this.housingListingList.get(i));
+	public HousingListing getNewestListing() {
+		return this.housingListingList.get(this.housingListingList.size()-1);
+	}
+	
+	public HousingListing getListingByID(String id) {
+		for(int i = 0; i < this.housingListingList.size(); ++i) {
+			if(this.housingListingList.get(i).getListingID().contentEquals(id)) {
+				return this.housingListingList.get(i);
 			}
 		}
 		
-		return results;
-	}*/
+		return null;
+	}
 	
 	/**
 	 * Main HousingListings search algorithm.
@@ -138,7 +136,7 @@ public class HousingListings {
 		boolean bathroomMatch = true;
 		boolean distanceMatch = true;
 		
-		////////////////////// Housing Type Search
+		// Housing Type Search
 		if(housingType != null) {
 			for(int i = 0; i < this.housingListingList.size(); ++i) {
 				if(this.haveListingType(housingType, i)) {
@@ -152,7 +150,7 @@ public class HousingListings {
 		if(!housingTypeMatch) {
 			return results;
 		}
-		///////////////////////////Price Search
+		// Price Search
 		if(price != 0) {
 			if(results.isEmpty()) {
 				for(int i = 0; i < this.housingListingList.size(); ++i) {
@@ -182,7 +180,7 @@ public class HousingListings {
 		if(!priceMatch) {
 			return results;
 		}
-		//////////////////////////Distance Search
+		// Distance Search
 		
 		if(maxDistance != 0) {
 			if(results.isEmpty()) {
@@ -213,7 +211,7 @@ public class HousingListings {
 		if(!distanceMatch) {
 			return results;
 		}
-		///////////////////Bedrooms
+		// Bedrooms Search
 		if(numberOfBedrooms != 0) {
 			if(results.isEmpty()) {
 				for(int i = 0; i < this.housingListingList.size(); ++i) {
@@ -243,7 +241,7 @@ public class HousingListings {
 		if(!bedroomMatch) {
 			return results;
 		}
-		///////////////////////// Bathrooms
+		// Bathrooms Search
 		if(numberOfBathrooms != 0) {
 			if(results.isEmpty()) {
 				for(int i = 0; i < this.housingListingList.size(); ++i) {
@@ -273,7 +271,7 @@ public class HousingListings {
 		if(!bathroomMatch) {
 			return results;
 		}
-		///////////////////////// Amenities
+		// Amenities Search
 		if(!amenities.isEmpty()) {
 			if(results.isEmpty()) {
 				for(int i = 0; i < this.housingListingList.size(); ++i) {
@@ -304,7 +302,10 @@ public class HousingListings {
 			return results;
 		}
 		
-		//////Results return
 		return results;
+	}
+	
+	public void saveListings() {
+		DataWriter.saveHousingListings();
 	}
 }

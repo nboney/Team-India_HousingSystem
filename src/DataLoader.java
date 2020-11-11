@@ -10,7 +10,6 @@ import org.json.simple.parser.JSONParser;
 public class DataLoader extends DataConstants {
 	
 	public static ArrayList<StudentUser> loadStudents() {
-		/* Creates a new StudentUser array and new DataLoader */
 		ArrayList<StudentUser> students = new ArrayList<StudentUser>();
 		DataLoader dataLoader = new DataLoader();
 		
@@ -60,16 +59,12 @@ public class DataLoader extends DataConstants {
 	private void mapStudentFavorites(StudentUser student, ArrayList<String> favoriteIDs, HousingListings housingListings) {
 		for (int j = 0; j < favoriteIDs.size(); ++j) {
 			HousingListing favListing = housingListings.retreiveByID(favoriteIDs.get(j).toString());
-			/*if(favListing.getListingID().isEmpty()) {
-				continue;
-			}*/
+			
 			student.addFavorites(favListing);
 		}
 	}
 	
-	/**
-	 * 
-	 */
+	
 	public static ArrayList<LeasingUser> loadLeasers() {
 		ArrayList<LeasingUser> leasers = new ArrayList<LeasingUser>();
 		DataLoader dataLoader = new DataLoader();
@@ -92,7 +87,7 @@ public class DataLoader extends DataConstants {
 				String password = (String)userJSON.get(USERS_PASSWORD);
 				String phone = (String)userJSON.get(USERS_PHONE);
 				String email = (String)userJSON.get(USERS_EMAIL);
-                		String address = (String)userJSON.get(LEASERS_ADDRESS);
+                String address = (String)userJSON.get(LEASERS_ADDRESS);
 				String rating = (String)userJSON.get(USERS_RATING);
 				String ratingCount = (String)userJSON.get(USERS_RATING_COUNT);
 				ArrayList<String> propertyIDs = (ArrayList<String>)userJSON.get(LEASERS_PROPERTIES);
@@ -138,6 +133,8 @@ public class DataLoader extends DataConstants {
 				String listingID = (String)listingJSON.get(LISTINGS_ID);
 				String listingTitle = (String)listingJSON.get(LISTINGS_TITLE);
 				String address = (String)listingJSON.get(LISTINGS_ADDRESS);
+				String zipcode = (String)listingJSON.get(LISTINGS_ZIP);
+				String billingAddress = (String)listingJSON.get(LISTINGS_BILLING_ADDRESS);
 				String description = (String)listingJSON.get(LISTINGS_DESCRIPTION);
 				String rating = (String)listingJSON.get(LISTINGS_RATING);
 				String ratingCount = (String)listingJSON.get(LISTINGS_RATING);
@@ -145,7 +142,7 @@ public class DataLoader extends DataConstants {
 				String price = (String)listingJSON.get(LISTINGS_PRICE);
 				String housingType = (String)listingJSON.get(LISTINGS_TYPE);
 				ArrayList<String> amenities = (ArrayList<String>)listingJSON.get(LISTINGS_AMENITIES);
-				String manager = (String)listingJSON.get(LISTINGS_MANAGER_USERNAME);
+				String managerName = (String)listingJSON.get(LISTINGS_MANAGER_NAME);
 				String bedrooms = (String)listingJSON.get(LISTINGS_BEDROOMS);
 				String bathrooms = (String)listingJSON.get(LISTINGS_BATHROOMS);
 				String units = (String)listingJSON.get(LISTINGS_UNITS);
@@ -153,16 +150,14 @@ public class DataLoader extends DataConstants {
 				HousingType housingENUM = dataLoader.getHousingType(housingType);
 				ArrayList<Amenities> amenitiesList = dataLoader.getAmenities(amenities);
 				
-				listings.add(new HousingListing(listingTitle, address, description, 
+				listings.add(new HousingListing(listingTitle, address, billingAddress, zipcode, description, 
 			              Double.parseDouble(distance), Double.parseDouble(price), housingENUM, 
-			              amenitiesList, manager, Integer.parseInt(bedrooms), Integer.parseInt(bathrooms),
+			              amenitiesList, managerName, Integer.parseInt(bedrooms), Integer.parseInt(bathrooms),
 			              Integer.parseInt(units)));
 				
 				listings.get(i).setListingID(listingID);
 				listings.get(i).setRating(Integer.parseInt(rating));
-				listings.get(i).setRatingCount(Integer.parseInt(ratingCount));
-				//dataLoader.mapListingReviews(listings.get(i), listingID);
-				
+				listings.get(i).setRatingCount(Integer.parseInt(ratingCount));				
 			}
 			
 			return listings;
@@ -199,7 +194,6 @@ public class DataLoader extends DataConstants {
 	}
 	
 	public ArrayList<Amenities> getAmenities(ArrayList<String> amenities) {
-		//Amenities compareAmenity = null;
 		ArrayList<Amenities> amenitiesList = new ArrayList<Amenities>();
 		
 		for(int i = 0; i < amenities.size(); ++i) {

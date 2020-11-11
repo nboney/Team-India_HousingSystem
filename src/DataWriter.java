@@ -1,5 +1,5 @@
 //make sure to download the json-simple so all this can compile and build path
-import java.io.FileWriter; //only one Plante had
+import java.io.FileWriter; 
 import java.io.IOException;
 import java.util.ArrayList;
 import org.json.simple.JSONArray;
@@ -120,6 +120,8 @@ public static void saveHousingListings() {
 		listingDetails.put(LISTINGS_ID, listing.getListingID());
 		listingDetails.put(LISTINGS_TITLE, listing.getListingTitle());
 		listingDetails.put(LISTINGS_ADDRESS, listing.getAddress());
+		listingDetails.put(LISTINGS_ZIP, listing.getZip());
+		listingDetails.put(LISTINGS_BILLING_ADDRESS, listing.getPaymentAddress());
 		listingDetails.put(LISTINGS_DESCRIPTION, listing.getDescription());
 		listingDetails.put(LISTINGS_PRICE, String.valueOf(listing.getPrice()));
 		listingDetails.put(LISTINGS_DISTANCE, String.valueOf(listing.getDistance()));

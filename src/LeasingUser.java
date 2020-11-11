@@ -13,17 +13,18 @@ public class LeasingUser extends RegisteredUser {
 		this.phone = phone;
 		this.email = email;
 		this.address = address;
+		listings = new ArrayList<HousingListing>();
 	}
 	
 	/**
 	 * Generates a new house listing by filling in the same attributes
 	 */
-	public void createListing(String listingTitle, String address, String description, double price,
-			                  double distance, HousingType housingType, ArrayList<Amenities> amenities,
-			                  String managerUsername, int bedrooms, int bathrooms, int availableUnits) {
+	public void createListing(String listingTitle, String streetAddress, String billingAddress, String zipcode, String description, double distance,
+			                  double price, HousingType housingType, ArrayList<Amenities> amenities,
+			                  String managerName, int bedrooms, int bathrooms, int availableUnits) {
 		
-		HousingListing newListing = new HousingListing(listingTitle, address, description, distance,
-				                                       price, housingType, amenities, managerUsername,
+		HousingListing newListing = new HousingListing(listingTitle, streetAddress, billingAddress, zipcode,
+													   description, distance, price, housingType, amenities, managerName,
 				                                       bedrooms, bathrooms, availableUnits);
 		HousingListings housingListings = null;
 		housingListings = housingListings.getInstance();
@@ -57,17 +58,7 @@ public class LeasingUser extends RegisteredUser {
 		return propertyIDs;
 	}
 	
-	/*
-	public void leaveStudentRating(String username, int rating, Users users) {
-		for(int i = 0; i < users.getStudentList().size(); ++i) {
-			if(users.getStudentList().get(i).getUsername().contentEquals(username)) {
-				users.getStudentList().get(i).updateRating(rating);
-			}
-		}
-		
-	}*/
 	
-	/** Collects and sets the user's ratings of the properties */
 	public void setRatingInfo(int rating, int ratingCount) {
     	this.rating = rating;
     	this.ratingCount = ratingCount;

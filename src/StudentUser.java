@@ -37,14 +37,7 @@ public class StudentUser extends RegisteredUser {
     	
     	return favoriteIDs;
     }
-    /*
-    public void leaveUserRating(LeasingUser user, int rating) {
-    }*/
-    
-    public void leaveHousingReview (HousingListing listing, int rating, String comment) {
-          
-    }
-    
+   
     public void setRatingInfo(int rating, int ratingCount) {
     	this.rating = rating;
     	this.ratingCount = ratingCount;
@@ -53,11 +46,6 @@ public class StudentUser extends RegisteredUser {
     public String getStudentID() {
     	return this.studentID;
     }
-    //Incomplete method - going to revisit later
-    /*
-    public void updateRating(int rating) {
-    	this.ratingCount = this.ratingCount++;
-    }*/
     
     @Override
     public String toString() {

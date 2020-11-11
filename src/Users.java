@@ -40,6 +40,17 @@ public class Users {
 		return null;
 	}
 	
+	public StudentUser getStudentAtLogin(String username, String password) {
+		for(int i = 0; i < studentList.size(); ++i) {
+			if(studentList.get(i).getUsername().contentEquals(username) &&
+				studentList.get(i).getPassword().contentEquals(password)) {
+				return studentList.get(i);
+			}
+		}
+		
+		return null;
+	}
+	
 	public ArrayList<StudentUser> getStudentList() {
 		return this.studentList;
 	}
@@ -57,6 +68,10 @@ public class Users {
 		}
 		
 		return false;
+	}
+	
+	public void saveStudents() {
+		DataWriter.saveStudents();
 	}
 	
 	public boolean haveLeaser(String username, int index) {
@@ -77,6 +92,11 @@ public class Users {
 		return null;
 	}
 	
+	public void addLeaser(LeasingUser leaser) {
+		leaser.setID(String.valueOf(this.leaserList.size()));
+		this.leaserList.add(leaser);
+	}
+	
 	public boolean leaserLogin(String username, String password) {
 		for(int i = 0; i < leaserList.size(); ++i) {
 			if(leaserList.get(i).getUsername().contentEquals(username) &&
@@ -86,5 +106,20 @@ public class Users {
 		}
 		
 		return false;
+	}
+	
+	public LeasingUser getLeaserAtLogin(String username, String password) {
+		for(int i = 0; i < leaserList.size(); ++i) {
+			if(leaserList.get(i).getUsername().contentEquals(username) &&
+				leaserList.get(i).getPassword().contentEquals(password)) {
+				return leaserList.get(i);
+			}
+		}
+		
+		return null;
+	}
+	
+	public void saveLeasers() {
+		DataWriter.saveLeasers();
 	}
 }

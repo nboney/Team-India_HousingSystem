@@ -33,4 +33,8 @@ public class Reviews {
 		return listingReviews;
 	}
 	
+	
+	public void saveReviews() {
+		DataWriter.saveReviews();
+	}
 }

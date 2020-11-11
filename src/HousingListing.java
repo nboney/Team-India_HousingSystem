@@ -15,24 +15,29 @@ public class HousingListing {
     private ArrayList<Review> reviews;
     private HousingType housingType;
     private ArrayList<Amenities> amenities;
-    private String managerUsername;
     private String managerName;
     private int bedrooms;
     private int bathrooms;
     private int availableUnits;
     
-    public HousingListing(String listingTitle, String address, String description, 
+    public HousingListing(String listingTitle, String address, String billingAddress, String zipcode, String description, 
 			              double distance, double price, HousingType housingType, 
-			              ArrayList<Amenities> amenities, String managerUsername, int bedrooms, int bathrooms,
+			              ArrayList<Amenities> amenities, String managerName, int bedrooms, int bathrooms,
 			              int availableUnits) {
             
         this.listingTitle = listingTitle;
         this.address = address;
+        this.billingAddress = billingAddress;
+        this.zipcode = zipcode;
         this.description = description;
         this.distance = distance;
         this.price = price;
         this.housingType = housingType;
         this.amenities = amenities;
+        this.managerName = managerName;
+        this.bedrooms =  bedrooms;
+        this.bathrooms = bathrooms;
+        this.availableUnits = availableUnits;
 	}
     
 	
@@ -140,6 +145,10 @@ public class HousingListing {
     	return this.availableUnits;
     }
     
+    public void setAvailableUnits(int availableUnits) {
+    	this.availableUnits = availableUnits;
+    }
+    
     public HousingType getHousingType() {
     	return this.housingType;
     }
@@ -148,16 +157,6 @@ public class HousingListing {
         ArrayList<Review> reviews = new ArrayList<Review>();
         return reviews;
     }
-	
-    public void addNewReview(StudentUser user, int rating, String comment) {
-    }
-  
-   /**
-    public void addReview(Review review, StudentUser user, int rating, String comment) {
-        review.addReview(review, user, rating, comment);
->>>>>>> af42c5b5f0dc4ac27932bd8cf672e3f4e370c54e
-    }
-    */
 	
     public void addReview(Review review) {
     	this.reviews.add(review);
@@ -190,7 +189,9 @@ public class HousingListing {
     }
 	
     public String toString() {
-    	return "\n----------\n" + this.listingTitle + "\n" + this.address + "\nProperty Manager: " + this.managerName +
+    	return "\n----------\n" + "Listing ID: " + this.listingID +"\n"
+                + this.listingTitle + "\n" + this.address + "\nZipcode: " + this.zipcode +
+                "\nProperty Manager: " + this.managerName +
     			"\n$" + this.price + " per month\n" + this.distance + " miles from campus\n" +
     			"Type of housing: " + this.housingType.name() + "\nNumber of bedrooms: " + this.bedrooms +
     			"\nNumber of Bathrooms: " + this.bathrooms + "\nAvailable units: " + this.availableUnits +
@@ -198,7 +199,4 @@ public class HousingListing {
     			"\n" + this.description + "\n----------\n";
     }
 	
-    public void setManager(LeasingUser leaser) {
-    	this.managerUsername = leaser.getUsername();
-    }	
 }

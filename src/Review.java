@@ -36,11 +36,7 @@ public class Review {
     public String getReviewID() {
     	return this.listingID;
     }
-   /**
-    public void addReview(Review review, StudentUser user, int rating, String comment) {
-        reviews.add(review);
-    }
-    */
+ 
     
     @Override
     public String toString() {
