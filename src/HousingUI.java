@@ -15,7 +15,8 @@ public class HousingUI {
     private static final String[] housingTypes = {"Apartment", "Condo", "Co-op", "Duplex", "House", "Loft", "Studio", "Townhome"};
     private static final String[] houseAmenities = {"Bike Racks", "Cats allowed", "Dogs allowed", "Furnished", "Garbage Pickup",
     		                          "On-site laundromat", "Parking", "Pool", "Washer and Dryer Connections",
-    		                          "Washer and Dryer included", "Wheelchair Accessible", "Done adding amenities"};
+    		                          "Washer and Dryer included", "Wheelchair Accessible", "Gym", "Free WiFi",
+    		                          "Done adding amenities"};
     
     private Scanner sc;
     private HousingSystem housingSystem;
@@ -402,6 +403,12 @@ public class HousingUI {
 	    			amenities.add(Amenities.WHEELCHAIR_ACCESSIBLE);
 	    			break;
 	    		case(11):
+	    			amenities.add(Amenities.GYM);
+	    			break;
+	    		case(12):
+	    			amenities.add(Amenities.FREE_WIFI);
+	    			break;
+	    		case(13):
 	    			return amenities;
 	    		default:
 	    			break;	

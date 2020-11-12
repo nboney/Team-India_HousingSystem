@@ -219,7 +219,11 @@ public class DataLoader extends DataConstants {
 				amenitiesList.add(Amenities.WASHER_DRYER_INCLUDED);
 			} else if (Amenities.WHEELCHAIR_ACCESSIBLE.name().contentEquals(amenities.get(i))) {
 				amenitiesList.add(Amenities.WHEELCHAIR_ACCESSIBLE);
-			}	
+			} else if (Amenities.GYM.name().contentEquals(amenities.get(i))) {
+				amenitiesList.add(Amenities.GYM);
+			} else if (Amenities.FREE_WIFI.name().contentEquals(amenities.get(i))) {
+				amenitiesList.add(Amenities.FREE_WIFI);
+			}
 		}
 		
 		return amenitiesList;
