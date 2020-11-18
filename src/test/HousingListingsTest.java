@@ -23,16 +23,6 @@ public void after() throws Exception {
 
 /** 
 * 
-* Method: getInstance() 
-* 
-*/ 
-@Test
-public void testGetInstance() throws Exception { 
-//TODO: Test goes here... 
-} 
-
-/** 
-* 
 * Method: retreiveByID(String listingID) 
 * 
 */ 
@@ -110,17 +100,7 @@ public void testHaveListingsUnderDistance() throws Exception {
 public void testHasListingAmenities() throws Exception { 
 //TODO: Test goes here... 
 } 
-
-/** 
-* 
-* Method: getListing(String listingTitle) 
-* 
-*/ 
-@Test
-public void testGetListing() throws Exception { 
-//TODO: Test goes here... 
-} 
-
+ 
 /** 
 * 
 * Method: generateListingID() 
@@ -153,36 +133,6 @@ public void testRemoveListing() throws Exception {
 
 /** 
 * 
-* Method: getAllListings() 
-* 
-*/ 
-@Test
-public void testGetAllListings() throws Exception { 
-//TODO: Test goes here... 
-} 
-
-/** 
-* 
-* Method: getNewestListing() 
-* 
-*/ 
-@Test
-public void testGetNewestListing() throws Exception { 
-//TODO: Test goes here... 
-} 
-
-/** 
-* 
-* Method: getListingByID(String id) 
-* 
-*/ 
-@Test
-public void testGetListingByID() throws Exception { 
-//TODO: Test goes here... 
-} 
-
-/** 
-* 
 * Method: housingSearch(HousingType housingType, ArrayList<Amenities> amenities, int numberOfBedrooms, int numberOfBathrooms, double price, double maxDistance) 
 * 
 */ 
@@ -200,6 +150,4 @@ public void testHousingSearch() throws Exception {
 public void testSaveListings() throws Exception { 
 //TODO: Test goes here... 
 } 
-
-
 } 
