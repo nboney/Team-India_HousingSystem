@@ -1,8 +1,12 @@
 package test.; 
 
+import housingapplication2.pkg0.StudentUser;
+import housingapplication2.pkg0.Users;
+import java.util.ArrayList;
 import org.junit.Test; 
 import org.junit.Before; 
-import org.junit.After; 
+import org.junit.After;
+import static org.junit.Assert.*;
 
 /** 
 * DataLoader Tester. 
@@ -11,16 +15,32 @@ import org.junit.After;
 * @since <pre>11/ 15, 2020</pre>
 * @version 1.0 
 */ 
-public class DataLoaderTest { 
+public class DataLoaderTest{ 
 
+    private Users students = Users.getInstance();
+    //private ArrayList<StudentUser> studentList = Users.getStudent();
+    
 @Before
 public void before() throws Exception { 
 } 
 
 @After
 public void after() throws Exception { 
+   /**
+    studentList.clear();
+    studentList.add(lastName, firstName, age, phone number);
+    studentList.add(same as line above (whatever order you have this method as));
+    DataWriter.saveStudents();
+    **/
 } 
 
+public void tearDown() {
+    /**
+    Users.getInstance().getStudent.clear();
+    DataWriter.saveStudent();
+    **/
+    
+}
 /** 
 * 
 * Method: loadStudents() 
@@ -56,26 +76,7 @@ public void testLoadListings() throws Exception {
 * Method: getHousingType(String housingType) 
 * 
 */ 
-@Test
-public void testGetHousingType() throws Exception { 
-//TODO: Test goes here... 
-} 
 
-/** 
-* 
-* Method: getAmenities(ArrayList<String> amenities) 
-* 
-*/ 
-@Test
-public void testGetAmenities() throws Exception { 
-//TODO: Test goes here... 
-} 
-
-/** 
-* 
-* Method: loadReviews() 
-* 
-*/ 
 @Test
 public void testLoadReviews() throws Exception { 
 //TODO: Test goes here... 
