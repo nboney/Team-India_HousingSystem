@@ -31,15 +31,6 @@ public void testCreateListing() throws Exception {
 //TODO: Test goes here... 
 } 
 
-/** 
-* 
-* Method: getAddress() 
-* 
-*/ 
-@Test
-public void testGetAddress() throws Exception { 
-//TODO: Test goes here... 
-} 
 
 /** 
 * 
@@ -61,15 +52,6 @@ public void testDeleteListing() throws Exception {
 //TODO: Test goes here... 
 } 
 
-/** 
-* 
-* Method: getPropertyIDs() 
-* 
-*/ 
-@Test
-public void testGetPropertyIDs() throws Exception { 
-//TODO: Test goes here... 
-} 
 
 /** 
 * 
