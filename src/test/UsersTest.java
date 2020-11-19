@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import housingapplication2.pkg0.Users;
 import housingapplication2.pkg0.StudentUser;
 import static org.junit.Assert.*;
+import housingapplication2.pkg0.LeasingUser;
 /** 
 * Users Tester. 
 * 
@@ -32,7 +33,10 @@ public class UsersTest {
     */ 
     @Test
     public void testAddStudent() throws Exception { 
-       
+        System.out.println("addStudent");
+        StudentUser testUser = new StudentUser("id", "first", "last", "user", "pass", "phone", "email");
+        Users instance = Users.getInstance();
+        instance.addStudent(testUser);
     } 
 
     /** 
@@ -42,7 +46,11 @@ public class UsersTest {
     */ 
     @Test
     public void testHaveStudent() throws Exception { 
-    //TODO: Test goes here... 
+        System.out.println("haveStudent");
+        StudentUser testUser = new StudentUser("id", "first", "last", "user", "pass", "phone", "email");
+        Users instance = Users.getInstance();
+        instance.addStudent(testUser);
+        assertEquals(instance.haveStudent("user", 0), true);
     } 
 
     /** 
@@ -52,7 +60,11 @@ public class UsersTest {
     */ 
     @Test
     public void testStudentLogin() throws Exception { 
-    //TODO: Test goes here... 
+        System.out.println("studentLogin");
+        StudentUser testUser = new StudentUser("id", "first", "last", "user", "pass", "phone", "email");
+        Users instance = Users.getInstance();
+        instance.addStudent(testUser);
+        assertEquals(instance.studentLogin("user", "pass"), true);
     }
 
     /** 
@@ -62,7 +74,11 @@ public class UsersTest {
     */ 
     @Test
     public void testHaveLeaser() throws Exception { 
-    //TODO: Test goes here... 
+        System.out.println("haveLeaser");
+        LeasingUser testUser = new LeasingUser("first", "last", "user", "pass", "phone", "email", "add");
+        Users instance = Users.getInstance();
+        instance.addLeaser(testUser);
+        assertEquals(instance.haveLeaser("user", 0), true);
     }
 
     /** 
@@ -72,7 +88,10 @@ public class UsersTest {
     */ 
     @Test
     public void testAddLeaser() throws Exception { 
-    //TODO: Test goes here... 
+        System.out.println("haveLeaser");
+        LeasingUser testUser = new LeasingUser("first", "last", "user", "pass", "phone", "email", "add");
+        Users instance = Users.getInstance();
+        instance.addLeaser(testUser);
     } 
 
     /** 
@@ -82,7 +101,11 @@ public class UsersTest {
     */ 
     @Test
     public void testLeaserLogin() throws Exception { 
-    //TODO: Test goes here... 
+        System.out.println("haveLeaser");
+        LeasingUser testUser = new LeasingUser("first", "last", "user", "pass", "phone", "email", "add");
+        Users instance = Users.getInstance();
+        instance.addLeaser(testUser);
+        assertEquals(instance.leaserLogin("user", "pass"), true);
     }
 
 } 
