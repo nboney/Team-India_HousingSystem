@@ -31,15 +31,6 @@ public void testStudentUserLogin() throws Exception {
 //TODO: Test goes here... 
 } 
 
-/** 
-* 
-* Method: getStudentUser(String username, String password) 
-* 
-*/ 
-@Test
-public void testGetStudentUser() throws Exception { 
-//TODO: Test goes here... 
-} 
 
 /** 
 * 
@@ -61,15 +52,6 @@ public void testLeasingUserLogin() throws Exception {
 //TODO: Test goes here... 
 } 
 
-/** 
-* 
-* Method: getLeasingUser(String username, String password) 
-* 
-*/ 
-@Test
-public void testGetLeasingUser() throws Exception { 
-//TODO: Test goes here... 
-} 
 
 /** 
 * 
@@ -81,35 +63,6 @@ public void testCreateLeasingUser() throws Exception {
 //TODO: Test goes here... 
 } 
 
-/** 
-* 
-* Method: getAllListings() 
-* 
-*/ 
-@Test
-public void testGetAllListings() throws Exception { 
-//TODO: Test goes here... 
-} 
-
-/** 
-* 
-* Method: getListingByID(String listingID) 
-* 
-*/ 
-@Test
-public void testGetListingByID() throws Exception { 
-//TODO: Test goes here... 
-} 
-
-/** 
-* 
-* Method: getSearchResults(HousingType housingType, ArrayList<Amenities> amenities, int numberOfBedrooms, int numberOfBathrooms, double price, double maxDistance) 
-* 
-*/ 
-@Test
-public void testGetSearchResults() throws Exception { 
-//TODO: Test goes here... 
-} 
 
 /** 
 * 
