@@ -3,6 +3,12 @@ package test.;
 import org.junit.Test; 
 import org.junit.Before; 
 import org.junit.After; 
+import housingapplication2.pkg0.StudentUser;
+import housingapplication2.pkg0.HousingListing;
+import housingapplication2.pkg0.HousingType;
+import housingapplication2.pkg0.Amenities;
+import java.util.ArrayList;
+import static org.junit.Assert.assertEquals;
 
 /** 
 * StudentUser Tester. 
@@ -28,7 +34,11 @@ public void after() throws Exception {
 */ 
 @Test
 public void testAddFavorites() throws Exception { 
-//TODO: Test goes here... 
+    StudentUser testUser = new StudentUser("id", "first", "last", "user", "pass", "phone", "email");
+    ArrayList<Amenities> list = new ArrayList<>();
+    HousingListing testListing = new HousingListing("title", "add", "bill", "zip",
+                                                    "desc", 12, 12, HousingType.HOUSE, list, "name", 4, 4, 4);
+    testUser.addFavorites(testListing);
 } 
 
 /** 
@@ -38,7 +48,13 @@ public void testAddFavorites() throws Exception {
 */ 
 @Test
 public void testGetFavorites() throws Exception { 
-//TODO: Test goes here... 
+    StudentUser testUser = new StudentUser("id", "first", "last", "user", "pass", "phone", "email");
+    ArrayList<Amenities> list = new ArrayList<>();
+    HousingListing testListing = new HousingListing("title", "add", "bill", "zip",
+                                                    "desc", 12, 12, HousingType.HOUSE, list, "name", 4, 4, 4);
+    testUser.addFavorites(testListing);
+    testUser.getFavorites();
+    
 } 
 
 /** 
@@ -48,7 +64,12 @@ public void testGetFavorites() throws Exception {
 */ 
 @Test
 public void testGetFavoriteIDs() throws Exception { 
-//TODO: Test goes here... 
+    StudentUser testUser = new StudentUser("id", "first", "last", "user", "pass", "phone", "email");
+    ArrayList<Amenities> list = new ArrayList<>();
+    HousingListing testListing = new HousingListing("title", "add", "bill", "zip",
+                                                    "desc", 12, 12, HousingType.HOUSE, list, "name", 4, 4, 4);
+    testUser.addFavorites(testListing);
+    testUser.getFavoriteIDs();
 } 
 
 /** 
@@ -58,7 +79,10 @@ public void testGetFavoriteIDs() throws Exception {
 */ 
 @Test
 public void testSetRatingInfo() throws Exception { 
-//TODO: Test goes here... 
+    StudentUser testUser = new StudentUser("id", "first", "last", "user", "pass", "phone", "email");
+    testUser.setRatingInfo(8, 7);
+    assertEquals(testUser.getRating(), 8);
+    assertEquals(testUser.getRatingCount(), 7);
 } 
 
 /** 
@@ -68,7 +92,8 @@ public void testSetRatingInfo() throws Exception {
 */ 
 @Test
 public void testGetStudentID() throws Exception { 
-//TODO: Test goes here... 
+    StudentUser testUser = new StudentUser("id", "first", "last", "user", "pass", "phone", "email");
+    assertEquals(testUser.getStudentID(), "id");
 } 
 
 /** 
@@ -78,7 +103,8 @@ public void testGetStudentID() throws Exception {
 */ 
 @Test
 public void testToString() throws Exception { 
-//TODO: Test goes here... 
+    StudentUser testUser = new StudentUser("id", "first", "last", "user", "pass", "phone", "email");
+    assertEquals(testUser.toString(), "first last\nuserid\nphone");
 } 
 
 
