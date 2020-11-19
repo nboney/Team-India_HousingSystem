@@ -1,8 +1,12 @@
 package test.; 
 
+import housingapplication2.pkg0.StudentUser;
+import housingapplication2.pkg0.Users;
+import java.util.ArrayList;
 import org.junit.Test; 
 import org.junit.Before; 
-import org.junit.After; 
+import org.junit.After;
+import static org.junit.Assert.*; 
 
 /** 
 * DataWriter Tester. 
@@ -13,14 +17,29 @@ import org.junit.After;
 */ 
 public class DataWriterTest { 
 
-@Before
-public void before() throws Exception { 
-} 
-
+    private Users students = Users.getInstance();
+    //private ArrayList<StudentUser> studentList = Users.getStudent();
+    
 @After
 public void after() throws Exception { 
+   /**
+    studentList.clear();
+    studentList.add(lastName, firstName, age, phone number);
+    studentList.add(same as line above (whatever order you have this method as));
+    DataWriter.saveStudents();
+    **/
 } 
 
+public void before() throws Exception {
+    
+}
+
+public void tearDown() {
+    /**
+    Users.getInstance().getStudent.clear();
+    DataWriter.saveStudent();
+    **/
+}
 /** 
 * 
 * Method: saveStudents() 
@@ -31,15 +50,6 @@ public void testSaveStudents() throws Exception {
 //TODO: Test goes here... 
 } 
 
-/** 
-* 
-* Method: getStudentJSON(StudentUser student) 
-* 
-*/ 
-@Test
-public void testGetStudentJSON() throws Exception { 
-//TODO: Test goes here... 
-} 
 
 /** 
 * 
@@ -53,16 +63,6 @@ public void testSaveLeasers() throws Exception {
 
 /** 
 * 
-* Method: getLeaserJSON(LeasingUser leaser) 
-* 
-*/ 
-@Test
-public void testGetLeaserJSON() throws Exception { 
-//TODO: Test goes here... 
-} 
-
-/** 
-* 
 * Method: saveHousingListings() 
 * 
 */ 
@@ -71,15 +71,6 @@ public void testSaveHousingListings() throws Exception {
 //TODO: Test goes here... 
 } 
 
-/** 
-* 
-* Method: getListingJSON(HousingListing listing) 
-* 
-*/ 
-@Test
-public void testGetListingJSON() throws Exception { 
-//TODO: Test goes here... 
-} 
 
 /** 
 * 
@@ -91,15 +82,5 @@ public void testSaveReviews() throws Exception {
 //TODO: Test goes here... 
 } 
 
-/** 
-* 
-* Method: getReviewJSON(Review review) 
-* 
-*/ 
-@Test
-public void testGetReviewJSON() throws Exception { 
-//TODO: Test goes here... 
 } 
 
-
-} 
