@@ -3,6 +3,10 @@ package test.;
 import org.junit.Test; 
 import org.junit.Before; 
 import org.junit.After; 
+import housingapplication2.pkg0.Review;
+import housingapplication2.pkg0.Reviews;
+import static org.junit.Assert.*;
+import java.util.ArrayList;
 
 /** 
 * Reviews Tester. 
@@ -13,6 +17,7 @@ import org.junit.After;
 */ 
 public class ReviewsTest { 
 
+    
 @Before
 public void before() throws Exception { 
 } 
@@ -28,7 +33,7 @@ public void after() throws Exception {
 */ 
 @Test
 public void testGetInstance() throws Exception { 
-//TODO: Test goes here... 
+    Reviews instance = Reviews.getInstance();
 } 
 
 /** 
@@ -38,7 +43,11 @@ public void testGetInstance() throws Exception {
 */ 
 @Test
 public void testGetReviewList() throws Exception { 
-//TODO: Test goes here... 
+    ArrayList<Review> testList = new ArrayList<>();
+    Review testReview = new Review("author", 8, "comment", "id");
+    testList.add(testReview);
+    Reviews instance = Reviews.getInstance();
+    assertEquals(instance.getReviewList(), testList);
 } 
 
 /** 
@@ -48,7 +57,11 @@ public void testGetReviewList() throws Exception {
 */ 
 @Test
 public void testGetReviews() throws Exception { 
-//TODO: Test goes here... 
+    ArrayList<Review> testList = new ArrayList<>();
+    Review testReview = new Review("author", 8, "comment", "id");
+    testList.add(testReview);
+    Reviews instance = Reviews.getInstance();
+    assertEquals(instance.getReviews("id"), testReview);
 } 
 
 /** 
@@ -58,8 +71,10 @@ public void testGetReviews() throws Exception {
 */ 
 @Test
 public void testSaveReviews() throws Exception { 
-//TODO: Test goes here... 
+    Reviews instance = Reviews.getInstance();
+    instance.saveReviews();
 } 
 
 
 } 
+
